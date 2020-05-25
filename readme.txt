@@ -12,13 +12,23 @@ Full featured Web Analytics solution. Easy to use, in addition or as an alternat
 
 == Description ==
 
-Full featured [Web Analytics solution](https://www.afsanalytics.com). 
-Easy to use, in addition or as an alternative to google analytics.
+Full featured real-time [Web Analytics solution](https://www.afsanalytics.com).
 
-Includes advanced features such as Heatmaps, detailed user profile,
-predictive analytics, events tracking and more... 
+Includes advanced features such as:
+
+* Heatmaps
+* Detailed user profile
+* Predictive analytics
+* Events tracking (AutoTrack)
+* SEO Keyword rank tracker tool
+* Enhanced e-commerce for WooCommerce store.
+* and more...
 
 https://www.youtube.com/watch?v=FQOHW3Ygijw
+
+
+Easy to use, in addition or as an alternative to google analytics.
+
 
 
 **Get a clear vision of what is happening on your website**
