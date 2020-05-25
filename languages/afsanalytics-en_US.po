@@ -1,0 +1,249 @@
+# Copyright (C) 2019 AFS Analytics
+# This file is distributed under the same license as the AFS Analytics 2 plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: AFS Analytics 2 3.90\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/afsanalytics\n"
+"POT-Creation-Date: 2019-12-28T13:54:05-05:00\n"
+"PO-Revision-Date: 2019-12-28 20:02+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Domain: afsanalytics\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+msgid "AFS Analytics 2"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.afsanalytics.com/"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"AFS Analytics offers one of the best real-time analytics tool using the "
+"latest technologies. Easy to use! Easy to install"
+msgstr ""
+
+#. Author of the plugin
+msgid "AFS Analytics"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.datasense-analytics.com/"
+msgstr ""
+
+#: includes/api/oauth/class-afsa-oauth-client.php:137
+msgid "oauth_invalid_state"
+msgstr ""
+
+#: includes/class-afsa-admin.php:80 includes/class-afsa-admin.php:89
+#: includes/class-afsa-admin.php:90
+msgid "AFSA Plugin settings"
+msgstr ""
+
+#: includes/class-afsa-admin.php:81
+msgid "Plugin settings"
+msgstr ""
+
+#: includes/class-afsa-admin.php:99
+msgid "AFSA Analytics Demo"
+msgstr ""
+
+#: includes/class-afsa-admin.php:100
+msgid "Dashboard Demo"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-dashboard-renderer.php:149
+msgid "Create your very own Account"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-dashboard-renderer.php:155
+msgid "Demo Account"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-intro-renderer.php:69
+msgid "My account ID"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-intro-renderer.php:71
+msgid "Link Existing Account"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-intro-renderer.php:75
+msgid "Create Account"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-intro-renderer.php:89
+msgid "Live Demo"
+msgstr ""
+
+#: includes/controllers/renderer/class-afsa-intro-renderer.php:92
+msgid "Launch Demo"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:17
+msgid "Outbound clicks tracking"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:18
+msgid "Inside clicks tracking"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:19
+msgid "Download tracking"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:20
+msgid "Video tracking"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:21
+msgid "iframe tracking"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:25
+msgid "Account ID"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:39
+msgid "Create a free Account"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:49
+msgid "Track Admin Page"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:50
+msgid "Track user loggin"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-privacy.php:17
+msgid "Anonymize Users Information"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-privacy.php:23
+msgid "Cookie Settings"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-privacy.php:24
+msgid "Anonymize IP addresses"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-privacy.php:38
+msgid "Ask User's Consent"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-privacy.php:39
+msgid "Located in"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-woo.php:17
+msgid "Track customer profile"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-woo.php:24
+msgid "Default sales Chanel"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-woo.php:30
+msgid ""
+"The name of default the sale channel you want to be shown as origin of any "
+"order processed by WooCommerce"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:91
+msgid "First party"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:92
+msgid "No Cookies"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:95
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:102
+msgid "Disabled"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:96
+msgid "1 Byte"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:97
+msgid "2 Bytes"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:98
+msgid "3 Bytes"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:99
+msgid "4 Bytes"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:103
+msgid "Exemption"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:104
+msgid "Auto"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:107
+msgid "Europe"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:108
+msgid "World"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:118
+msgid "Off"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:119
+msgid "On"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:120
+msgid "Dataset"
+msgstr ""
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:164
+msgid ""
+"Check this if you want activity on your admin pages to be tracked (default: "
+"unchecked)"
+msgstr ""
+
+#: includes/ui/class-afsa-post-title.php:14
+msgid "AFS Analytics tracker name"
+msgstr ""
+
+#: includes/ui/class-afsa-post-title.php:17
+msgid "tracker name (optional)"
+msgstr ""
+
+#: includes/woo/class-afsa-woo-hooks-products.php:64
+msgid "search"
+msgstr ""
+
+#: includes/woo/class-afsa-woo-hooks-products.php:66
+msgid "product categorie"
+msgstr ""
+
+#: includes/woo/class-afsa-woo-hooks-products.php:68
+msgid "front page"
+msgstr ""
+
+#: includes/woo/class-afsa-woo-hooks-products.php:70
+msgid "shop index"
+msgstr ""
+
+#: includes/woo/class-afsa-woo-hooks-products.php:165
+msgid "product detail"
+msgstr ""
