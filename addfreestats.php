@@ -4,7 +4,7 @@
   Plugin Name: AFS Analytics
   Plugin URI: https://www.afsanalytics.com/
   Description: Full featured Web Analytics solution. Easy to use, in addition or as an alternative to google analytics.
-  Version: 4.0
+  Version: 4.01
   Author: AFS Analytics
   Author URI: https://www.datasense-analytics.com/
   Text Domain: afsanalytics
@@ -34,7 +34,7 @@ if ( ! class_exists( 'AFSA_Core_Stats_Plugin' ) ) :
 
 
 	define( 'AFSA_DEBUG_MODE', false );
-	define( 'AFSA_MODULE_VERSION', '4.00' );
+	define( 'AFSA_MODULE_VERSION', '4.01' );
 
 	class AFSA_Core_Stats_Plugin {
 
