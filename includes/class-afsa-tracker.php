@@ -22,17 +22,17 @@ class AFSA_Tracker {
 	// Action callbacks
 
 	public static function on_enqueue_script() {
-				/*
-				 Disabled for now */
-				/*
-		if ( AFSA_Config::should_track() ) {
-			wp_enqueue_script(
-				'afsa_tracker_local',
-				AFSA_Config::get_url( 'js/afsa.tracker.js' ),
-				array( 'jquery' )
-			);
-		}
-				*/
+		/*
+		  Disabled for now */
+		/*
+		  if ( AFSA_Config::should_track() ) {
+		  wp_enqueue_script(
+		  'afsa_tracker_local',
+		  AFSA_Config::get_url( 'js/afsa.tracker.js' ),
+		  array( 'jquery' )
+		  );
+		  }
+		 */
 	}
 
 	// Admin header / footer
@@ -870,7 +870,7 @@ class AFSA_Tracker {
 			$title .= ' [ CALLED VIA AJAX ] ';
 		}
 
-		$str = json_encode( getallheaders(), JSON_PRETTY_PRINT ) . "\n\n";
+		$str = ''; // json_encode( getallheaders(), JSON_PRETTY_PRINT ) . "\n\n";
 
 		$str .= is_array( $data ) ?
 				json_encode( $data, JSON_PRETTY_PRINT ) :

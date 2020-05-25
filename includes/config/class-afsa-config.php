@@ -82,9 +82,17 @@ class AFSA_Config {
 			return is_ajax();
 		}
 
-		$headers = getallheaders();
-		if ( ! empty( $headers['X-Requested-With'] ) && $headers['X-Requested-With'] == 'XMLHttpRequest' ) {
-			return true;
+		try {
+
+			if ( function_exists( 'getallheaders' ) ) {
+				$headers = getallheaders();
+
+				if ( ! empty( $headers['X-Requested-With'] ) && $headers['X-Requested-With'] == 'XMLHttpRequest' ) {
+					return true;
+				}
+			}
+		} catch ( Exception $ex ) {
+
 		}
 
 		return false;
@@ -136,7 +144,6 @@ class AFSA_Config {
 	public static function get_account_manager_url() {
 		return admin_url( 'admin.php?page=' . AFSA_MENU_PAGE_ACCOUNT_MANAGER );
 	}
-
 
 	public static function get_admin_url() {
 		return admin_url();
@@ -340,7 +347,7 @@ class AFSA_Config {
 	}
 
 	public static function get_autotrack_all_option() {
-			return static::get_option( 'autotrack_all', AFSA_AUTOTRACK_ON );
+		return static::get_option( 'autotrack_all', AFSA_AUTOTRACK_ON );
 	}
 
 	public static function get_autotrack_option_array() {
