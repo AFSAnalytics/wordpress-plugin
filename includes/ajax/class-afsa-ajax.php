@@ -19,6 +19,7 @@ class AFSA_Ajax {
 		echo $json;
 
 		wp_die();
+
 	}
 
 }

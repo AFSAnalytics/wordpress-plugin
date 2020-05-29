@@ -50,10 +50,6 @@ class AFSA_Setting_Page {
 			$this->tabs['afsa_tab_woo'] = 'ECommerce';
 		}
 
-		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( __( 'You do not have sufficient permissions to access this page.', 'afsanalytics' ) );
-		}
-
 		register_setting( 'afsa_settings_main', 'afsa_settings_main' );
 		register_setting( 'afsa_settings_privacy', 'afsa_settings_privacy' );
 		register_setting( 'afsa_settings_autotrack', 'afsa_settings_autotrack' );
@@ -87,6 +83,12 @@ class AFSA_Setting_Page {
 	// FORM RENDERING
 
 	public function renderContent() {
+		// moved from __construct() to avoid user check firing when just registering settings
+				// (when called from class AFSA_Admin )
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
 
 		print '<h1>' . __( 'AFS Analytics settings', 'afsanalytics' ) . '</h1>';
 

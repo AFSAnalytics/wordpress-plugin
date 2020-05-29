@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## 4.00 - 2020-04-05
+## 4.02 - 2020-05-29
+- Fixed settings conflict.
 
-- Major rewrite
+## 4.01 - 2020-05-25
+- Fixed getallheaders call.
+
+## 4.00 - 2020-05-25
+
+- Major rewrite.

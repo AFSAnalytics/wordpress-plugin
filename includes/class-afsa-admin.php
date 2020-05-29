@@ -12,7 +12,6 @@ require_once AFSA_INCLUDES_DIR . '/account/class-afsa-account-controller.php';
 class AFSA_Admin {
 
 	public static function init() {
-		AFSA_Setting_Page::create();
 
 		add_action( 'edit_form_after_title', array( 'AFSA_Post_Title_Field', 'on_edit_form_after_title' ), 10, 1 );
 		add_action( 'save_post', array( 'AFSA_Post_Title_Field', 'on_save_post' ), 10, 2 );
@@ -148,6 +147,8 @@ class AFSA_Admin {
 	}
 
 	public static function render_menu() {
+
+		AFSA_Setting_Page::create(); // NEEDED to register settings
 
 		$render_setting_cb = array( 'AFSA_Setting_Page', 'render' );
 
