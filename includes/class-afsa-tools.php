@@ -76,4 +76,25 @@ class AFSA_Tools {
 		exit();
 	}
 
+	public static function get_all_headers() {
+		try {
+
+			if ( function_exists( 'getallheaders' ) ) {
+				return getallheaders();
+			}
+
+			$ret = array();
+			foreach ( $_SERVER as $k => $v ) {
+				if ( substr( $k, 0, 5 ) == 'HTTP_' ) {
+					$ret[ str_replace( ' ', '-', ucwords( strtolower( str_replace( '_', ' ', substr( $k, 5 ) ) ) ) ) ] = $v;
+				}
+			}
+			return $ret;
+		} catch ( Exception $e ) {
+
+		}
+
+		return array();
+	}
+
 }

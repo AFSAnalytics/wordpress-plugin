@@ -7,7 +7,7 @@ class AFSA_Account_Form_Renderer {
 		$logo = '<div class=afsa_logo_container>'
 				. '<img class=afsa_logo src=' . AFSA_Config::get_url( 'assets/images/logo.small.png' ) . '>'
 				. '<div class=afsa_intro_title>'
-				. __( 'Configure your AFS Analytics module in one click', 'afsanalytics' ) . '</div>'
+				. __( 'Configure your AFS Analytics plugin in one click', 'afsanalytics' ) . '</div>'
 				. '</div>';
 
 		$ret = $type == 'intro' ?

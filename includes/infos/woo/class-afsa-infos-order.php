@@ -97,9 +97,12 @@ class AFSA_Order_Infos {
 				$variation      = $product;
 				$product        = wc_get_product( $variation->get_parent_id() );
 				$variation_id   = $product->get_id();
-				$variation_name = AFSA_Config::use_variation_sku() ?
-						$variation->get_sku() :
-						$variation->get_name();
+				$variation_name = $variation->get_name();
+
+								 $sku = $variation->get_sku();
+				if ( AFSA_Config::use_variation_sku() && ! empty( $sku ) ) {
+					$variation_name = $sku;
+				}
 			} else {
 				$variation_id = null;
 			}
@@ -279,6 +282,10 @@ class AFSA_Order_Infos {
 				$sku               = $product->get_sku();
 
 				$product_id = $product->get_id();
+
+				if ( empty( $sku ) ) {
+					$sku = (string) $product_id;
+				}
 
 				if ( $is_current_refund ) {
 					$refund_was_found = true;

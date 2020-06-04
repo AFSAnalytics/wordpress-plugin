@@ -89,6 +89,10 @@ class AFSA_Product_Infos {
 		$product_id   = $o->get_ID();
 		$product_type = $o->get_type();
 
+		$id = empty( $sku ) ?
+				(string) $product_id :
+				$sku;
+
 		$full_cat_name = esc_js( AFSA_Category_Infos::get_name_from_product( $o ) );
 
 		$price = isset( $p['total'] ) ?
@@ -114,7 +118,7 @@ class AFSA_Product_Infos {
 
 		if ( $format == AFSA_FORMAT_COMPACT ) {
 			return array(
-				'id'   => $sku,
+				'id'   => $id,
 				'name' => $product_name,
 			);
 		}
@@ -123,7 +127,7 @@ class AFSA_Product_Infos {
 
 		if ( $format == AFSA_FORMAT_TRANSACTION_ITEM ) {
 			$ret = array(
-				'id'       => $sku,
+				'id'       => $id,
 				'name'     => $product_name,
 				'category' => $full_cat_name,
 				'price'    => $price,
@@ -137,7 +141,7 @@ class AFSA_Product_Infos {
 
 		if ( $format == AFSA_FORMAT_IMPRESSION ) {
 			$ret       = array(
-				'id'       => $sku,
+				'id'       => $id,
 				'name'     => $product_name,
 				'list'     => $list,
 				'category' => $full_cat_name,
@@ -151,7 +155,7 @@ class AFSA_Product_Infos {
 
 		if ( $format == AFSA_FORMAT_PRODUCT ) {
 			$ret = array(
-				'id'       => $sku,
+				'id'       => $id,
 				'name'     => $product_name,
 				'category' => $full_cat_name,
 				'price'    => $price,
@@ -246,8 +250,9 @@ class AFSA_Product_Infos {
 
 		$variation = wc_get_product( $variation_id );
 
-		if ( AFSA_Config::use_variation_sku() ) {
-			return $variation->get_sku();
+				$sku = $variation->get_sku();
+		if ( AFSA_Config::use_variation_sku() && ! empty( $sku ) ) {
+			return $sku;
 		}
 
 		return $variation->get_name();

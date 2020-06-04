@@ -160,7 +160,7 @@ class AFSA_Account_Controller {
 				. '</div>'
 				. '<div class=afsa_headline>'
 				. __(
-					'Your AFS Analytics module is now fully configured.',
+					'Your AFS Analytics plugin is now fully configured.',
 					'afsanalytics'
 				)
 				. '</div>'
@@ -169,13 +169,13 @@ class AFSA_Account_Controller {
 				. __( 'Traffic and activity on your shop is now monitored in real time.', 'afsanalytics' )
 				. ' '
 				. __(
-					'Detailed statistics will begin to appear in your module dashboard as soon as new visitors will be visiting it.',
+					'Detailed statistics will begin to appear in your plugin dashboard as soon as new visitors will be visiting it.',
 					'afsanalytics'
 				)
 				. '</p>'
 				. '<p>'
 				. __(
-					'You can retrieve your Account ID at any time by visiting this module configuration page.',
+					'You can retrieve your Account ID at any time by visiting this plugin configuration page.',
 					'afsanalytics'
 				)
 				. '</p>'
@@ -188,17 +188,17 @@ class AFSA_Account_Controller {
 				. '</div>'
 				. '</div>'
 				. '<div class=afsa_button_bar>'
-				. '<a href="' . AFSA_Config::get_config_controller_url() . '" '
+								. '<a href="' . AFSA_Config::get_config_controller_url() . '" '
 				. ' class="afsa_button">'
 				. __( 'Advanced configuration', 'afsanalytics' )
 				. '</a>'
-				. '<a href="' . AFSA_Route_Manager::get_dashboard_url() . '" '
+								. '<a href="' . AFSA_Config::get_dashboard_url() . '" '
+				. ' class="afsa_button afsa_selected">'
+				. __( 'Open Dashboard', 'afsanalytics' )
+				. '</a>'
+								. '<a href="' . AFSA_Route_Manager::get_dashboard_url() . '" '
 				. ' class="afsa_button">'
 				. __( 'Visit AFSAnalytics.com', 'afsanalytics' )
-				. '</a>'
-				. '<a href="' . AFSA_Config::get_dashboard_url() . '" '
-				. ' class="afsa_button">'
-				. __( 'Open Dashboard', 'afsanalytics' )
 				. '</a>'
 				. '</div>'
 				. '</div>' // afsa_content

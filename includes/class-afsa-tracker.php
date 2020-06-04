@@ -292,15 +292,16 @@ class AFSA_Tracker {
 			}
 		}
 
+		// Should come before user infos
+		if ( ! ( AFSA_Config::is_back_office() && ! AFSA_Config::track_admin_pages() ) ) {
+			$aa[] = 'aa("send", "pageview");';
+		}
+
 		// USER / LOGIN infos
 
 		if ( AFSA_Config::get_int_option( 'user_logged_tracking' ) == 1 ) {
 			$aa[] = $this->render_loggin_info();
 			$aa[] = $this->render_user_info();
-		}
-
-		if ( ! ( AFSA_Config::is_back_office() && ! AFSA_Config::track_admin_pages() ) ) {
-			$aa[] = 'aa("send", "pageview");';
 		}
 
 		$aa[] = $this->render_buffer();
@@ -870,7 +871,7 @@ class AFSA_Tracker {
 			$title .= ' [ CALLED VIA AJAX ] ';
 		}
 
-		$str = ''; // json_encode( getallheaders(), JSON_PRETTY_PRINT ) . "\n\n";
+		$str = '';
 
 		$str .= is_array( $data ) ?
 				json_encode( $data, JSON_PRETTY_PRINT ) :

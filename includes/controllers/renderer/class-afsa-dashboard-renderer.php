@@ -64,8 +64,8 @@ class AFSA_Dashboard_Renderer {
 
 	public function __construct() {
 
-		$this->account_id   = AFSA_Config::get_account_id();
-		$this->dashbord_url = admin_url( 'admin.php?page=' . AFSA_MENU_PAGE_DASHBOARD_ID );
+		$this->account_id    = AFSA_Config::get_account_id();
+		$this->dashboard_url = admin_url( 'admin.php?page=' . AFSA_MENU_PAGE_DASHBOARD_ID );
 
 		if ( ! $this->embedded ) {
 			AFSA_Renderer::hook_footer_line();
@@ -139,7 +139,7 @@ class AFSA_Dashboard_Renderer {
 				),
 			),
 			'url'         => array(
-				'dashboard' => $this->dashbord_url,
+				'dashboard' => $this->dashboard_url,
 			),
 		);
 

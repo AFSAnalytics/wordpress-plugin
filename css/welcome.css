@@ -119,6 +119,7 @@ body {
 	transition: all 300ms ease;
 }
 
+.afsa_button.afsa_selected,
 .afsa_button:hover {
 	background: #428bca;
 	color: white !important;

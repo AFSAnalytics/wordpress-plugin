@@ -52,7 +52,7 @@ class AFSA_Config {
 				true;
 	}
 
-	public static function pluggin_name() {
+	public static function plugin_name() {
 		return 'afsanalytics';
 	}
 
@@ -83,13 +83,9 @@ class AFSA_Config {
 		}
 
 		try {
-
-			if ( function_exists( 'getallheaders' ) ) {
-				$headers = getallheaders();
-
-				if ( ! empty( $headers['X-Requested-With'] ) && $headers['X-Requested-With'] == 'XMLHttpRequest' ) {
-					return true;
-				}
+			$headers = AFSA_Tools::get_all_headers();
+			if ( ! empty( $headers['X-Requested-With'] ) && $headers['X-Requested-With'] == 'XMLHttpRequest' ) {
+				return true;
 			}
 		} catch ( Exception $ex ) {
 
@@ -124,8 +120,8 @@ class AFSA_Config {
 		return static::get_afsa_api_home();
 	}
 
-	// root URL for pluggin files
-	public static function pluggin_url( $u = null ) {
+	// root URL for plugin files
+	public static function plugin_url( $u = null ) {
 		return static::$plugin_base_url . ( $u ? $u : '' );
 	}
 
@@ -150,7 +146,7 @@ class AFSA_Config {
 	}
 
 	public static function get_url( $u = null ) {
-		return static::pluggin_url( $u );
+		return static::plugin_url( $u );
 	}
 
 	public static function get_page_name() {
@@ -223,6 +219,8 @@ class AFSA_Config {
 					return AFSA_ECOMMERCE_BASIC;
 				}
 			}
+
+			return AFSA_ECOMMERCE_ADVANCED;
 		}
 
 		return AFSA_ECOMMERCE_UNSUPPORTED;

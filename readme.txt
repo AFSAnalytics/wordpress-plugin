@@ -3,7 +3,7 @@ Contributors: AddFreeStats
 Requires at least: 3.5.0
 Tested up to: 5.4.1
 Requires PHP: 5.3
-Stable tag: 4.02
+Stable tag: 4.03
 Tags: analytics, afsanalytics, heatmaps, event tracking, real-time analytics, analytics dashboard, tracking, track visitor, admin tracking, statistics, counter, stats, track page, tracker, geolocation, sale tracking, user tracking, real-time tracking, visitor tracking, track visitors, ip tracking,  online users, pageviews, admin tracking, counter, e-commerce tracking, track keyword, keyword position, woocommerce tracking, predictive analytics, referrer, website analytics, web analytics, website statistics
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Full featured Web Analytics solution. Easy to use, in addition or as an alternat
 
 == Description ==
 
-Full featured real-time [Web Analytics solution](https://www.afsanalytics.com).
+Full featured real-time Web Analytics solution.
 
 Includes advanced features such as:
 
@@ -86,11 +86,11 @@ Monitor new backlinks, keywords ranking from Google, Bing, Yahoo and other searc
 
 **Get the most of your Ad dollars**
 
-Get Newsletter and AD Campaign key metrics from an **independent party**. 
+Get Newsletter and Marketing Campaign key metrics from an **independent party**. 
 Stop wasting dollars in inefficient campaigns. 
 Mesure traffic quality. Detect fake users, robots and zombies.
 
-* Ad Campaign advanced tracking
+* Marketing Campaigns advanced tracking
 * Quality traffic indicators
 * Zombies detection
 
@@ -103,6 +103,7 @@ See which search terms are most profitable.
 Follow in real time multiple KPI.
 
 * Advanced eCommerce analytics
+* Enhanced WooCommerce support
 
 
 **Advanced Guides for developers**
@@ -162,6 +163,12 @@ A live demo is freely accessible from the plugin.
 Now includes a full featured dashboard right inside your admin dashboard.
 
 == Changelog ==
+
+= 4.03 =
+
+* Improved account creation workflow.
+* WooCommerce 4.2.0 support
+* Better handling of WooCommerce products with no sku.
 
 
 = 4.02 =
@@ -237,7 +244,7 @@ Minor bug fixes.
 = 3.3 =
 * The "AFS Analytics" shortcut now appears on the WordPress menu.
 * You can set the tracker name for each post or page.
-* Tracker is invisble by default.
+* Tracker is invisible by default.
 
 = 3.2 =
 * Code updated.

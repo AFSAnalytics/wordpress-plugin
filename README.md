@@ -1,6 +1,7 @@
 # AFS Analytics official Wordpress plugin
 
 
+
 See the [plugin readme.txt](./readme.txt)
 
 

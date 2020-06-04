@@ -78,6 +78,9 @@ class AFSA_Admin {
 		switch ( $page ) {
 
 			case AFSA_MENU_PAGE_ACCOUNT_MANAGER:
+				if ( AFSA_Config::afsa_enabled() ) {
+					AFSA_Dashboard_Renderer::init_api();
+				}
 				AFSA_Account_Controller::get()->on_action_completed();
 				break;
 
@@ -159,8 +162,8 @@ class AFSA_Admin {
 				array( 'AFSA_Dashboard_Page', 'render_intro' );
 
 		add_menu_page(
-			'AFS Analytics', // page title
-			'AFS Analytics', // menu title
+			__( 'AFS Analytics - Dashboard', 'afsanalytics' ), // page title
+			__( 'AFS Analytics', 'afsanalytics' ), // menu title
 			'manage_options', // perms
 			AFSA_MENU_PAGE_DASHBOARD_ID, // id
 			$dashboard_cb,
@@ -170,7 +173,7 @@ class AFSA_Admin {
 
 		add_submenu_page(
 			AFSA_MENU_PAGE_DASHBOARD_ID, // parent_id
-			__( 'AFS Analytics Plugin settings', 'afsanalytics' ),
+			__( 'AFS Analytics - Plugin settings', 'afsanalytics' ),
 			__( 'Plugin settings', 'afsanalytics' ),
 			'manage_options',
 			AFSA_MENU_PAGE_SETTINGS_ID,
@@ -178,7 +181,7 @@ class AFSA_Admin {
 		);
 
 		add_options_page(
-			__( 'AFS Analytics', 'afsanalytics' ),
+			__( 'AFS Analytics - Plugin settings', 'afsanalytics' ),
 			__( 'AFS Analytics', 'afsanalytics' ),
 			'manage_options',
 			AFSA_MENU_PAGE_SETTINGS_ID,
@@ -192,7 +195,7 @@ class AFSA_Admin {
 			if ( $account->is_free() ) {
 				add_submenu_page(
 					AFSA_MENU_PAGE_DASHBOARD_ID, // parent_id
-					__( 'AFS Analytics', 'afsanalytics' ),
+					__( 'AFS Analytics - Upgrade', 'afsanalytics' ),
 					__( 'Upgrade Account', 'afsanalytics' ),
 					'manage_options',
 					AFSA_MENU_PAGE_UPGRADE_ID,
@@ -202,7 +205,7 @@ class AFSA_Admin {
 
 			add_submenu_page(
 				AFSA_MENU_PAGE_DASHBOARD_ID, // parent_id
-				__( 'AFS Analytics dashboard', 'afsanalytics' ),
+				__( 'AFS Analytics - Online Dashboard', 'afsanalytics' ),
 				__( 'View extra reports on AFSAnalytics.com online dashboard', 'afsanalytics' ),
 				'manage_options',
 				AFSA_MENU_PAGE_DASHBOARD_EXTRA_ID,
@@ -214,7 +217,7 @@ class AFSA_Admin {
 
 		add_submenu_page(
 			null, // parent_id
-			__( 'AFS Analytics Account manager', 'afsanalytics' ),
+			__( 'AFS Analytics - Account manager', 'afsanalytics' ),
 			__( 'account_manager', 'afsanalytics' ),
 			'manage_options',
 			AFSA_MENU_PAGE_ACCOUNT_MANAGER,
@@ -224,13 +227,22 @@ class AFSA_Admin {
 		if ( ! $is_account_set ) {
 			add_submenu_page(
 				AFSA_MENU_PAGE_DASHBOARD_ID,
-				__( 'AFS Analytics Demo', 'afsanalytics' ),
+				__( 'AFS Analytics - Demo', 'afsanalytics' ),
 				__( 'Dashboard Demo', 'afsanalytics' ),
 				'manage_options',
 				AFSA_MENU_PAGE_DASHBOARD_DEMO_ID,
 				array( 'AFSA_Dashboard_Page', 'run_demo' )
 			);
 		}
+
+		add_submenu_page(
+			AFSA_MENU_PAGE_DASHBOARD_ID, // parent_id
+			__( 'AFS Analytics - Contact Us', 'afsanalytics' ),
+			__( 'Contact us', 'afsanalytics' ),
+			'manage_options',
+			AFSA_MENU_PAGE_SUPPORT,
+			array( 'AFSA_Admin', 'afsa_contact_redirect' )
+		);
 	}
 
 	public static function afsa_dboard_redirect() {
@@ -246,6 +258,15 @@ class AFSA_Admin {
 		wp_redirect(
 			AFSA_Route_Manager::get_dashboard_url(
 				'pricing.php',
+				array( 'utm_medium' => 'admin_menu_upgrade' )
+			)
+		);
+	}
+
+	public static function afsa_contact_redirect() {
+		wp_redirect(
+			AFSA_Route_Manager::get_dashboard_url(
+				'contact.html',
 				array( 'utm_medium' => 'admin_menu_upgrade' )
 			)
 		);

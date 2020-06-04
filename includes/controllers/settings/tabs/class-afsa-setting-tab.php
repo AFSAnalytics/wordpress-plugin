@@ -161,7 +161,7 @@ class AFSA_Setting_Tab {
 
 		$help = array(
 			'admin_pages_tracking' =>
-			__( 'Check this if you want activity on your admin pages to be tracked (default: unchecked)', 'afsanalytics' ),
+			__( 'Check this if you want activity on your admin pages to be tracked (default: checked)', 'afsanalytics' ),
 			'user_logged_tracking' =>
 			__( 'Enable user tracking (default: checked)', 'afsanalytics' ),
 			'afsa_anon_user_infos' =>
