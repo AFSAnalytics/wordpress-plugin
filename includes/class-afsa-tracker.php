@@ -232,6 +232,7 @@ class AFSA_Tracker {
 		// CMS
 
 		$aa[] = $this->aa_set( 'cms', AFSA_Config::CMS() );
+		$aa[] = $this->aa_set( 'api', AFSA_MODULE_VERSION );
 
 		// ECOM INFOS
 

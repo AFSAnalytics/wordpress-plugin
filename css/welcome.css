@@ -34,7 +34,7 @@ body {
 	margin: auto;
 	margin-top: 50px;
 	flex-wrap: wrap;
-	background: rgba(255,255,255,0.95);
+	background: rgba(255,255,255,1);
 	transition: all 300ms ease;
 	cursor: default;
 	flex-flow: column;

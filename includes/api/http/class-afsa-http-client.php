@@ -21,6 +21,7 @@ class AFSA_HTTP_Client {
 		$ret = wp_remote_post(
 			$url,
 			array(
+				'method'  => 'POST',
 				'body'    => $args,
 				'timeout' => 30,
 			)

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 4.0.4 - 2020-06-09
+
+- Fixed embedded dashboard access denied error.
+
 ## 4.0.3 - 2020-06-04
 
 - Improved account creation workflow.

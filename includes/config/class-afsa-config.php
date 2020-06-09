@@ -447,9 +447,12 @@ class AFSA_Config {
 
 	// URLS
 
+	public static function get_current_sheme() {
+		return is_ssl() ? 'https' : 'http';
+	}
 
 	public static function get_current_url() {
-		return $_SERVER['REQUEST_SCHEME']
+		return static::get_current_sheme()
 				. '://' . $_SERVER['HTTP_HOST']
 				. $_SERVER['REQUEST_URI'];
 	}
