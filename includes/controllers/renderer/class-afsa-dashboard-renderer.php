@@ -29,7 +29,7 @@ class AFSA_Dashboard_Renderer {
 
 		wp_enqueue_style(
 			'afsa_gfonts',
-			'https://fonts.googleapis.com/css?family=Lato:700|Open+sans:500'
+			'https://fonts.googleapis.com/css?family=Lato:700|Open+sans:500|Roboto'
 		);
 
 		wp_enqueue_style(

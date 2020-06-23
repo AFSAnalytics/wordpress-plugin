@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 4.0.5 - 2020-06-23
+
+- Wordpress 5.4.2 support.
+- More detailed orders info.
+
+- Fixed embedded dashboard access denied error.
+
 ## 4.0.4 - 2020-06-09
 
 - Fixed embedded dashboard access denied error.

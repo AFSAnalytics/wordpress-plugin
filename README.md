@@ -1,9 +1,11 @@
 # AFS Analytics official Wordpress plugin
 
-
-
 See the [plugin readme.txt](./readme.txt)
 
+
+## Download it on Wordpress.org
+
+[![AFS Analytics for Wordpress ](https://dev.afsanalytics.com/img/wp/banner-772x250.jpg)](https://www.wordpress.org/plugins/addfreestats/)
 
 ## Changelog
 

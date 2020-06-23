@@ -89,6 +89,11 @@ class AFSA_Visitor_Infos extends AFSA_Infos {
 
 	public static function render_phone( $str ) {
 		$chars = str_split( trim( $str ) );
+
+		if ( ! AFSA_Config::anonymize_members() ) {
+			return $str;
+		}
+
 		$ret   = array();
 		$count = 0;
 		foreach ( $chars as $ch ) {

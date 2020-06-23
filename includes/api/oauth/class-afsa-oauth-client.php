@@ -117,6 +117,7 @@ class AFSA_OAuth_Client {
 			'response_type'   => 'code',
 			// 'account_id' => $this->account_id,
 			'client_id'       => $this->client_id,
+			'client_api'      => AFSA_MODULE_VERSION,
 			'redirect_uri'    => $this->url['callback'],
 			'state'           => $state,
 			'approval_prompt' => 'auto',
@@ -164,6 +165,7 @@ class AFSA_OAuth_Client {
 				'grant_type'   => 'authorization_code',
 				'code'         => $code,
 				'client_id'    => $this->client_id,
+				'client_api'   => AFSA_MODULE_VERSION,
 				// retrieving url saved by  request_authorization_code()
 				'redirect_uri' => AFSA_Config::get_oauth_callback_url(),
 			)
@@ -179,6 +181,7 @@ class AFSA_OAuth_Client {
 				'grant_type'   => 'authorization_code',
 				'code'         => $code,
 				'client_id'    => $this->client_id,
+				'client_api'   => AFSA_MODULE_VERSION,
 				'redirect_uri' => $this->url['callback'],
 			)
 		);
@@ -233,6 +236,7 @@ class AFSA_OAuth_Client {
 				array(
 					'grant_type'    => 'refresh_token',
 					'client_id'     => $this->client_id,
+					'client_api'    => AFSA_MODULE_VERSION,
 					'refresh_token' => $this->token->get_refresh_token(),
 				)
 			);
