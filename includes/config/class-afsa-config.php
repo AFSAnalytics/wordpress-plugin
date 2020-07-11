@@ -72,6 +72,10 @@ class AFSA_Config {
 		return static::$log_enabled && static::is_debug();
 	}
 
+	public static function is_gravatar_enabled() {
+		return ! empty( static::get_option( 'gravatar_profile_enabled' ) );
+	}
+
 	public static function is_ajax() {
 
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {

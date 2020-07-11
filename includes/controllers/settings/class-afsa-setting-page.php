@@ -41,7 +41,7 @@ class AFSA_Setting_Page {
 	public function __construct() {
 
 		$this->tabs = array(
-			'afsa_tab_main'      => __( 'Account Settings', 'afsanalytics' ),
+			'afsa_tab_main'      => __( 'Main Settings', 'afsanalytics' ),
 			'afsa_tab_autotrack' => __( 'Advanced Settings', 'afsanalytics' ),
 			'afsa_tab_privacy'   => __( 'Privacy', 'afsanalytics' ),
 		);

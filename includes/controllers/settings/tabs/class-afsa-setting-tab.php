@@ -160,12 +160,14 @@ class AFSA_Setting_Tab {
 	public function render_field( $field, $code ) {
 
 		$help = array(
-			'admin_pages_tracking' =>
+			'admin_pages_tracking'     =>
 			__( 'Check this if you want activity on your admin pages to be tracked (default: checked)', 'afsanalytics' ),
-			'user_logged_tracking' =>
+			'user_logged_tracking'     =>
 			__( 'Enable user tracking (default: checked)', 'afsanalytics' ),
-			'afsa_anon_user_infos' =>
+			'afsa_anon_user_infos'     =>
 			__( 'Check this option to anonymize visitor information in order to comply with data privacy laws in some countries.', 'afsanalytics' ),
+			'gravatar_profile_enabled' =>
+			__( 'Use users gravatar profile as default avatar image.', 'afsanalytics' ),
 		);
 
 		print $code;

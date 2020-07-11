@@ -33,11 +33,12 @@ class AFSA_Settings {
 
 		return $this->default_settings = array(
 			'main'      => array(
-				'account_id'            => get_option( 'afs_account', 0 ),
-				'accesskey'             => get_option( 'afs_accesskey' ),
-				'admin_pages_tracking'  => get_option( 'afs_admin_pages_tracking', 1 ),
-				'user_logged_tracking'  => get_option( 'afs_user_logged_tracking', 1 ),
-				'display_admin_summary' => get_option( 'afs_udisplay_admin_summary', 1 ),
+				'account_id'               => get_option( 'afs_account', 0 ),
+				'accesskey'                => get_option( 'afs_accesskey' ),
+				'admin_pages_tracking'     => get_option( 'afs_admin_pages_tracking', 1 ),
+				'user_logged_tracking'     => get_option( 'afs_user_logged_tracking', 1 ),
+				'display_admin_summary'    => get_option( 'afs_udisplay_admin_summary', 1 ),
+				'gravatar_profile_enabled' => get_option( 'afs_gravatar_profile_enabled', 0 ),
 			),
 			'autotrack' => array(
 				'autotrack_all'      => $this->get_old_autotrack_setting( 'afs_autotrack_all', AFSA_AUTOTRACK_ON ),

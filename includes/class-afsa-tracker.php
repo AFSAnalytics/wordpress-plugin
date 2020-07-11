@@ -252,7 +252,7 @@ class AFSA_Tracker {
 		}
 
 		if ( $user_consent != 0 ) {
-			$aa[] = $this->aa_setOption(
+			$aa[] = $this->aa_set_option(
 				'cookieconsent_mode',
 				array(
 					1 => 'exemption',
@@ -261,7 +261,7 @@ class AFSA_Tracker {
 				$user_consent
 			);
 
-			$aa[] = $this->aa_setOption(
+			$aa[] = $this->aa_set_option(
 				'cookieconsent_audience',
 				array(
 					0 => 'eu',

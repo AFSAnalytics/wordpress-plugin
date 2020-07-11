@@ -4,13 +4,13 @@
   Plugin Name: AFS Analytics
   Plugin URI: https://www.afsanalytics.com/
   Description: Full featured Web Analytics solution. Easy to use, in addition or as an alternative to google analytics.
-  Version: 4.05
+  Version: 4.06
   Author: AFS Analytics
   Author URI: https://www.afsanalytics.com/
   Text Domain: afsanalytics
   Domain Path: /languages
   WC requires at least: 1.4.1
-  WC tested up to: 4.2.0
+  WC tested up to: 4.3.0
  */
 
 
@@ -36,15 +36,13 @@ if ( ! class_exists( 'AFSA_Core_Stats_Plugin' ) ) :
 
 
 	define( 'AFSA_DEBUG_MODE', false );
-	define( 'AFSA_MODULE_VERSION', '4.0.5' );
+	define( 'AFSA_MODULE_VERSION', '4.0.6' );
 
 	class AFSA_Core_Stats_Plugin {
 
 		public function __construct() {
 
 			AFSA_Config::$plugin_base_url = plugin_dir_url( __FILE__ );
-
-			load_plugin_textdomain( 'afsanalytics', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 			add_action( 'plugins_loaded', array( $this, 'on_plugins_loaded' ) );
 
@@ -62,6 +60,8 @@ if ( ! class_exists( 'AFSA_Core_Stats_Plugin' ) ) :
 
 		public function on_plugins_loaded() {
 
+			load_plugin_textdomain( 'afsanalytics', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
 			if (
 					in_array(
 						'woocommerce/woocommerce.php',
@@ -75,8 +75,6 @@ if ( ! class_exists( 'AFSA_Core_Stats_Plugin' ) ) :
 
 			AFSA_Admin::ensure_early_redirects();
 		}
-
-
 
 		// INSTALL / UNINSTALL
 

@@ -249,7 +249,8 @@ class AFSA_Admin {
 		wp_redirect(
 			AFSA_Route_Manager::get_dashboard_url(
 				'dashboard.php',
-				array( 'utm_medium' => 'admin_menu_dashboard' )
+				array()
+				// array( 'utm_medium' => 'admin_menu_dashboard' )
 			)
 		);
 	}
@@ -258,7 +259,8 @@ class AFSA_Admin {
 		wp_redirect(
 			AFSA_Route_Manager::get_dashboard_url(
 				'pricing.php',
-				array( 'utm_medium' => 'admin_menu_upgrade' )
+				array()
+				// array( 'utm_medium' => 'admin_menu_upgrade' )
 			)
 		);
 	}
@@ -267,7 +269,8 @@ class AFSA_Admin {
 		wp_redirect(
 			AFSA_Route_Manager::get_dashboard_url(
 				'contact.html',
-				array( 'utm_medium' => 'admin_menu_upgrade' )
+				array()
+				// array( 'utm_medium' => 'admin_menu_upgrade' )
 			)
 		);
 	}

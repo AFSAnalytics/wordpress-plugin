@@ -18,7 +18,7 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 
 		$this->add_section(
 			'afsa_main_section',
-			__( 'Account Settings' ),
+			__( 'Main Settings' ),
 			function() {
 					// return optional description;
 			}
@@ -53,9 +53,10 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 
 		$this->add_checkboxes(
 			array(
-				'admin_pages_tracking'  => __( 'Track Admin Page', 'afsanalytics' ),
-				'user_logged_tracking'  => __( 'Track user loggin', 'afsanalytics' ),
-				'display_admin_summary' => __( 'Display day trends summary on Admin Dashboard', 'afsanalytics' ),
+				'admin_pages_tracking'     => __( 'Track Admin Page', 'afsanalytics' ),
+				'user_logged_tracking'     => __( 'Track user loggin', 'afsanalytics' ),
+				'display_admin_summary'    => __( 'Display day trends summary on Admin Dashboard', 'afsanalytics' ),
+				'gravatar_profile_enabled' => __( 'Enable gravatar profile support', 'afsanalytics' ),
 			)
 		);
 

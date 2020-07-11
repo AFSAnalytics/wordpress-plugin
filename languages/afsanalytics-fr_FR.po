@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AFS Analytics 2 3.90\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/afsanalytics\n"
-"POT-Creation-Date: 2020-06-04T10:35:22-04:00\n"
-"PO-Revision-Date: 2020-06-04 16:41+0200\n"
+"POT-Creation-Date: 2020-07-01T21:32:14-04:00\n"
+"PO-Revision-Date: 2020-07-02 03:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -81,7 +81,7 @@ msgstr "Ouvrir le Dashboard"
 msgid "Visit AFSAnalytics.com"
 msgstr "Découvrir AFSAnalytics.com"
 
-#: includes/api/oauth/class-afsa-oauth-client.php:152
+#: includes/api/oauth/class-afsa-oauth-client.php:153
 msgid "oauth_invalid_state"
 msgstr ""
 
@@ -221,8 +221,8 @@ msgstr ""
 "propre compte."
 
 #: includes/controllers/settings/class-afsa-setting-page.php:44
-msgid "Account Settings"
-msgstr "Paramètres du compte"
+msgid "Main Settings"
+msgstr "Paramètres"
 
 #: includes/controllers/settings/class-afsa-setting-page.php:45
 msgid "Advanced Settings"
@@ -292,11 +292,15 @@ msgstr "Capture des utilisateurs connectés"
 msgid "Display day trends summary on Admin Dashboard"
 msgstr "Afficher les tendances du jour dans le back office"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:64
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:59
+msgid "Enable gravatar profile support"
+msgstr "Activer le support gravatar"
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:65
 msgid "Access Key"
 msgstr "Clé d'accès"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:76
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:77
 msgid ""
 "An Access key allow you to access your AFS Analytics Dashboard without "
 "providing a password each time."
@@ -304,7 +308,7 @@ msgstr ""
 "Une clé d'accès vous permet d'accéder à AFSAnalytics.com sans devoir fournir "
 "un mot de passe à chaque fois."
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:79
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:80
 msgid "Create an access key"
 msgstr "Créer une clé d'accès"
 
@@ -428,6 +432,11 @@ msgstr ""
 "visiteurs et vous conformer ainsi aux lois de respect de la vie privée mises "
 "en place dans certains pays."
 
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:170
+msgid "Use users gravatar profile as default avatar image."
+msgstr ""
+"Utiliser le profile gravatar des visiteurs comme image de profile par default"
+
 #: includes/ui/class-afsa-post-title.php:12
 msgid "AFS Analytics tracker name"
 msgstr "Nom du Traqueur AFS Analytics"
@@ -455,6 +464,9 @@ msgstr "accueil shop"
 #: includes/woo/class-afsa-woo-hooks-products.php:159
 msgid "product detail"
 msgstr "détail article"
+
+#~ msgid "Account Settings"
+#~ msgstr "Paramètres du compte"
 
 #~ msgid "You do not have sufficient permissions to access this page."
 #~ msgstr "Vous n'êtes pas autorisés à accéder à cette page."

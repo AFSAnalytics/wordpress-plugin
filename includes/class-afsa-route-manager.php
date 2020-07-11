@@ -6,17 +6,20 @@
  *
  * Insert Access Key if set
  */
-
 class AFSA_Route_Manager {
 
 	public static $host = 'https://www.afsanalytics.com';
 
 	public static function get_dashboard_url( $u = '', $extra = array() ) {
-		$args = array(
-			'utm_source'   => strtolower( AFSA_Config::CMS() ),
-			'utm_campaign' => 'plugin',
-			'utm_medium'   => 'backoffice',
-		);
+		/*
+		 $args = array(
+		  'utm_source'   => strtolower( AFSA_Config::CMS() ),
+		  'utm_campaign' => 'plugin',
+		  'utm_medium'   => 'backoffice',
+		  );
+		 */
+
+		$args = array();
 
 		foreach ( $extra as $k => $v ) {
 			$args[ $k ] = $v;

@@ -30,9 +30,16 @@ class AFSA_Visitor_Infos extends AFSA_Infos {
 		}
 		if ( ! empty( $user->user_email ) ) {
 			$info['email'] = esc_js( $this->render_email( $user->user_email ) );
+			try {
 
-			$info['gravatar_hash'] = md5( strtolower( trim( $user->user_email ) ) );
+				if ( AFSA_Config::is_gravatar_enabled() ) {
+					$info['photourl'] = 'gravatar:' . md5( strtolower( trim( $user->user_email ) ) );
+				}
+			} catch ( Exception $ex ) {
+
+			}
 		}
+
 		if ( ! empty( $user->user_firstname ) ) {
 			$info['firstname'] = esc_js( $user->user_firstname );
 		}
@@ -44,19 +51,21 @@ class AFSA_Visitor_Infos extends AFSA_Infos {
 		}
 
 		if ( AFSA_Config::anonymize_members() ) {
-			$this->data['anonymised'] = 1;
+			$info['anonymised'] = 1;
 		}
 
 		if ( ! empty( $user->company ) ) {
-			$this->data['company'] = $o->company;
+			$info['company'] = $o->company;
 		}
 
 		/*
 		  if ($o->birthday != '0000-00-00') {
-		  $this->data['birthday'] = $o->birthday;
+		  $info['birthday'] = $o->birthday;
 		  }
 		 */
+
 		return $this->data = apply_filters( 'afsa_tracker_visitor_infos', $info, $user, $this );
+
 	}
 
 	// ANONYMIZE functions
