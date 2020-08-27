@@ -15,7 +15,6 @@ class AFSA_OAuth_Client {
 	private $client_secret = '';
 	private $url;
 
-
 	public function __construct( $account_id, $callback_url ) {
 		$this->oauth_server_url = AFSA_Config::get_oauth_server_url();
 
@@ -62,25 +61,33 @@ class AFSA_OAuth_Client {
 
 			AFSA_Tools::log( 'expires in', $this->token->days_before_expiration(), $this->token->is_expired() );
 
-			if ( $this->token->days_before_expiration() < 2 ) {
-				if ( $this->refresh_token() ) {
-					return true;
-				}
+			if ( ! $this->token->is_expired() ) {
+				return true;
+			}
 
-				// restart auth process only if the token has really expired
-				if ( $this->token->is_expired() ) {
-					$this->token->clear();
-				}
+			// On Expired Token
 
-				if ( $no_authorization_request ) {
-					return false;
-				} else {
-					$this->request_authorization_code();
-				}
+			AFSA_Tools::log( 'Refreshing token' );
+			// getting a new access token from stored refresh token
+			if ( $this->refresh_token() ) {
+				return true;
+			}
+
+			// could not obtain a new access token
+			// => clear current token and restart auth process
+			$this->token->clear();
+			$this->token = new AFSA_OAuth_Token( $this->account_id );
+
+			if ( $no_authorization_request ) {
+				return false;
+			} else {
+				$this->request_authorization_code();
 			}
 
 			return true;
 		}
+
+		// On No Token available
 
 		AFSA_Tools::log( 'cant load token' );
 
@@ -166,7 +173,7 @@ class AFSA_OAuth_Client {
 				'code'         => $code,
 				'client_id'    => $this->client_id,
 				'client_api'   => AFSA_MODULE_VERSION,
-				// retrieving url saved by  request_authorization_code()
+				// retrieving url saved by request_authorization_code()
 				'redirect_uri' => AFSA_Config::get_oauth_callback_url(),
 			)
 		);
@@ -229,7 +236,7 @@ class AFSA_OAuth_Client {
 	private function refresh_token() {
 		$client = new AFSA_HTTP_Client( array( 'auth' => array( $this->client_id, $this->client_secret ) ) );
 
-		// If we have a refresh token try to get new token
+		// If we have a refresh token => try to get a new access token
 		if ( ! empty( $this->token->get_refresh_token() ) ) {
 			$client->post(
 				$this->url['token'],
@@ -245,11 +252,8 @@ class AFSA_OAuth_Client {
 
 			$data['method'] = __METHOD__;
 
-			// AFSA_Tools::log(json_encode($data, JSON_PRETTY_PRINT));
-
 			if ( empty( $data['error'] ) ) {
 				$this->token->set( $data, true );
-
 				return true;
 			}
 		}

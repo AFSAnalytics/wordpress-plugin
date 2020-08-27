@@ -119,16 +119,16 @@ class AFSA_Woo_Session {
 		}
 
 		/*
-		AFSA_Tools::log(
-			json_encode(
-				array(
-					'key'   => is_array( $data ) ? array_keys( $data ) : $data,
-					'data'  => $data['checkout'],
-					'steps' => $this->checkout_out_step,
-				),
-				JSON_PRETTY_PRINT
-			)
-		);*/
+		  AFSA_Tools::log(
+		  json_encode(
+		  array(
+		  'key'   => is_array( $data ) ? array_keys( $data ) : $data,
+		  'data'  => $data['checkout'],
+		  'steps' => $this->checkout_out_step,
+		  ),
+		  JSON_PRETTY_PRINT
+		  )
+		  ); */
 	}
 
 	public function save() {
@@ -197,20 +197,17 @@ class AFSA_Woo_Session {
 	public function render_checkout_step( $tracker, $products ) {
 		$step = &$this->checkout_out_step;
 
-		// always rendering step 1 to keep products list updated
-		if ( $step['current'] === AFSA_TRACKER_CHEKOUT_STEP_VIEW_CART ) {
-			$tracker->render_checkout_step( AFSA_TRACKER_CHEKOUT_STEP_VIEW_CART, $products );
-		}
+		if ( (int) $step['current'] > (int) $step['registered'] ) {
+			for (
+			$s = (int) $step['registered'] + 1; // ignoring 'current'
+					$s <= (int) $step['current']; $s++ ) {
 
-		if ( $step['current'] > $step['registered'] ) {
-			for ( $s = $step['registered']; $s <= $step['current']; $s ++ ) {
-				if ( $s !== AFSA_TRACKER_CHEKOUT_STEP_VIEW_CART ) {
-					$tracker->render_checkout_step( $s );
-				}
+				$tracker->render_checkout_step( $s, $products );
 			}
 		}
 
 		$this->checkout_out_step['registered'] = $step['current'];
+
 		return $this;
 	}
 

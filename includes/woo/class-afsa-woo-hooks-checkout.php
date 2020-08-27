@@ -15,9 +15,6 @@ class AFSA_WOO_Hooks_Checkout {
 			)
 		);
 
-		// https://jeroensormani.com/ultimate-guide-to-woocommerce-checkout-fields/
-		// https://docs.woocommerce.com/document/tutorial-customising-checkout-fields-using-actions-and-filters/
-		// add_filter('woocommerce_checkout_fields', array(__CLASS__, 'on_woocommerce_checkout_fields'));
 	}
 
 	public static function on_woocommerce_before_cart() {

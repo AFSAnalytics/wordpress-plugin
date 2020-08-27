@@ -19,6 +19,7 @@ class AFSA_Site_Infos extends AFSA_Infos {
 			'cms'            => AFSA_Config::CMS(),
 			'wp_version'     => AFSA_Config::CMS_version(),
 			'plugin_version' => AFSA_MODULE_VERSION,
+			'tz'             => get_option( 'timezone_string' ),
 		);
 
 		if ( $woo_version ) {

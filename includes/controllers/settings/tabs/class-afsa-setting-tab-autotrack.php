@@ -6,7 +6,7 @@ class AFSA_Setting_Tab_Autotrack extends AFSA_Setting_Tab {
 
 		$this->add_section(
 			'afsa_autotrack_section',
-			__( 'Autotrack Settings', 'afsanalytics' ),
+			__( 'Monitored Events', 'afsanalytics' ),
 			function() {
 					// return optional description;
 			}

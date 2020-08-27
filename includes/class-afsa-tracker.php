@@ -528,17 +528,26 @@ class AFSA_Tracker {
 			$aa[] = $this->aa_ec_add_product( $item );
 		}
 
+		// setting clear options to no as checkout will follow
+		$aa[] = 'aa("ec:SetOption", {"clear": "no"});';
+
 		$aa[] = $this->aa_ec_action( 'purchase', $data['order'] );
+
+		// setting clear options to default value;
+		 $aa[] = 'aa("ec:SetOption", {"clear": "yes"});';
+
+		$ret = $this->assimilate( $aa ); // should come before vv
 
 		if ( empty( $p['nostep'] ) ) {
 			$this->render_checkout_step(
 				AFSA_TRACKER_CHEKOUT_STEP_ORDER_CONFIRMATION,
 				null,
-				array( 'payment_method' => $o->get_payment_method_infos() )
+				// payment_method {code,title}
+					$o->get_payment_method_infos()
 			);
 		}
 
-		return $this->assimilate( $aa );
+		return $ret;
 	}
 
 	public function render_billing_info( $order ) {
@@ -630,6 +639,7 @@ class AFSA_Tracker {
 
 	// CHECKOUT
 	/*
+	 *
 	 * Step 1 : cart view
 	 * Step 2 : checkout form
 	 * Step 3 : on order confirmation page
@@ -641,14 +651,29 @@ class AFSA_Tracker {
 		$ret = array(
 			'step' => $step,
 		);
+		$op  = null;
 		if ( ! empty( $option ) ) {
-			$ret['option'] = $option;
+
+			if ( is_string( $option ) ) {
+				$op = &$option;
+			} else {
+
+				if ( ! empty( $option['code'] ) ) {
+					$op = $option['code'];
+				} elseif ( ! empty( $option['title'] ) ) {
+					$op = $option['title'];
+				}
+			}
+
+			if ( $op ) {
+				$ret['option'] = $op;
+			}
 		}
 
 		return $ret;
 	}
 
-	public function render_checkout_Step( $step, $products = null, $option = null ) {
+	public function render_checkout_step( $step, $products = null, $option = null ) {
 		if ( ! $this->advanced_mode || ! $step ) {
 			return null;
 		}
@@ -656,7 +681,7 @@ class AFSA_Tracker {
 		$aa = array();
 
 		// only add products on first step
-		if ( $step == AFSA_TRACKER_CHEKOUT_STEP_VIEW_CART ) {
+		if ( $products ) {
 
 			$infos  = new AFSA_Product_Infos();
 			$p_data = $infos->parse_multiple(

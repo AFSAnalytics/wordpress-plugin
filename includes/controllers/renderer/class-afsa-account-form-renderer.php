@@ -16,12 +16,12 @@ class AFSA_Account_Form_Renderer {
 
 		return $ret . '<form  method=post class=afsa_existing_account>'
 				. '<div class="afsa_form_help">'
-				. __( 'If you already possess an AFS analytics account, enter its ID below, click on "Link your account", and you are done.', 'afsanalytics' )
+				. __( 'If you already possess an AFS analytics account, enter your Website ID below, click on "Link website", and you are done.', 'afsanalytics' )
 				. '</div>'
 				. '<input type="text" pattern="[0-9]{8}" maxlength="8" name="afsa_linked_account_id" '
-				. 'value="" placeholder="' . __( 'My account ID', 'afsanalytics' ) . '">'
+				. 'value="" placeholder="' . __( 'Website ID', 'afsanalytics' ) . '">'
 				. '<input type=hidden name=page value=afsa_settings_page>'
-				. '<input class="afsa_button" type=submit value="' . __( 'Link Existing Account', 'afsanalytics' ) . '">'
+				. '<input class="afsa_button" type=submit value="' . __( 'Link Website', 'afsanalytics' ) . '">'
 				. '</form>'
 				. '<div  class=afsa_new_account>'
 				. '<div class="afsa_form_help">'

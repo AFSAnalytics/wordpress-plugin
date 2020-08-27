@@ -26,7 +26,7 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 
 		add_settings_field(
 			'account_id',
-			__( 'Account ID', 'afsanalytics' ),
+			__( 'Website ID', 'afsanalytics' ),
 			function() use ( $account_id ) {
 
 					print AFSA_Tools::render_js_data(
@@ -34,8 +34,8 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 					);
 
 					$help = AFSA_Config::get_account_id() ?
-					__( 'Your AFS Analytics account ID', 'afsanalytics' ) :
-					__( 'Enter your AFS Analytics account ID or', 'afsanalytics' )
+					__( 'Your AFS Analytics Website ID', 'afsanalytics' ) :
+					__( 'Enter your AFS Analytics Website ID or', 'afsanalytics' )
 					. ' <span class="afsa_create_account afsa_link">'
 					. __( 'Create a free Account', 'afsanalytics' ) . '</span> '
 					. __( 'if you do not have one yet', 'afsanalytics' );

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the AFS Analytics plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: AFS Analytics 4.06\n"
+"Project-Id-Version: AFS Analytics 4.07\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/afsanalytics\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-07-01T21:32:14-04:00\n"
+"POT-Creation-Date: 2020-08-26T12:05:14-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: afsanalytics\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Visit AFSAnalytics.com"
 msgstr ""
 
-#: includes/api/oauth/class-afsa-oauth-client.php:153
+#: includes/api/oauth/class-afsa-oauth-client.php:164
 msgid "oauth_invalid_state"
 msgstr ""
 
@@ -128,15 +128,16 @@ msgid "Configure your AFS Analytics plugin in one click"
 msgstr ""
 
 #: includes/controllers/renderer/class-afsa-account-form-renderer.php:19
-msgid "If you already possess an AFS analytics account, enter its ID below, click on \"Link your account\", and you are done."
+msgid "If you already possess an AFS analytics account, enter your Website ID below, click on \"Link website\", and you are done."
 msgstr ""
 
 #: includes/controllers/renderer/class-afsa-account-form-renderer.php:22
-msgid "My account ID"
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:29
+msgid "Website ID"
 msgstr ""
 
 #: includes/controllers/renderer/class-afsa-account-form-renderer.php:24
-msgid "Link Existing Account"
+msgid "Link Website"
 msgstr ""
 
 #: includes/controllers/renderer/class-afsa-account-form-renderer.php:28
@@ -201,7 +202,7 @@ msgid "AFS Analytics settings"
 msgstr ""
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:9
-msgid "Autotrack Settings"
+msgid "Monitored Events"
 msgstr ""
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab-autotrack.php:17
@@ -224,16 +225,12 @@ msgstr ""
 msgid "Iframe tracking"
 msgstr ""
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:29
-msgid "Account ID"
-msgstr ""
-
 #: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:37
-msgid "Your AFS Analytics account ID"
+msgid "Your AFS Analytics Website ID"
 msgstr ""
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:38
-msgid "Enter your AFS Analytics account ID or"
+msgid "Enter your AFS Analytics Website ID or"
 msgstr ""
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:40

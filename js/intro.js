@@ -44,13 +44,15 @@ function create_account() {
 		u += '&currency=' + encodeURIComponent( s.currency );
 	}
 
+	if (s.tz || null) {
+		u += '&tz=' + encodeURIComponent( s.tz );
+	}
+
 	if (s.desc || null) {
 		u += '&sitedes=' + encodeURIComponent( s.desc );
 	}
 
-	u +=
-			'&cms=' + encodeURIComponent( s.cms )
-
+	u += '&cms=' + encodeURIComponent( s.cms )
 			+ '&afsa_return_url=' + encodeURIComponent( s.return_url )
 			+ '&afsa_state=' + encodeURIComponent( s.state )
 			+ '&wp_version=' + encodeURIComponent( s.wp_version );
