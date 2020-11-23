@@ -165,7 +165,7 @@ class AFSA_Setting_Tab {
 			'user_logged_tracking'     =>
 			__( 'Enable user tracking (default: checked)', 'afsanalytics' ),
 			'afsa_anon_user_infos'     =>
-			__( 'Check this option to anonymize visitor information in order to comply with data privacy laws in some countries.', 'afsanalytics' ),
+			__( 'Check this option to anonymize visitor information.', 'afsanalytics' ),
 			'gravatar_profile_enabled' =>
 			__( 'Use users gravatar profile as default avatar image.', 'afsanalytics' ),
 		);

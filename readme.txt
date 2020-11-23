@@ -3,7 +3,7 @@ Contributors: AddFreeStats
 Requires at least: 3.5.0
 Tested up to: 5.5
 Requires PHP: 5.3
-Stable tag: 4.07
+Stable tag: 4.08
 Tags: analytics, afsanalytics, heatmaps, web analytics, website statistics, event tracking, real-time analytics, analytics dashboard, tracking, track visitor, admin tracking, statistics, counter, stats, track page, tracker, geolocation, sale tracking, user tracking, real-time tracking, visitor tracking, track visitors, ip tracking,  online users, pageviews, admin tracking, counter, e-commerce tracking, track keyword, keyword position, woocommerce tracking, predictive analytics, referrer, website analytics
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -163,6 +163,11 @@ A live demo is freely accessible from the plugin.
 Now includes a full featured dashboard right inside your admin dashboard.
 
 == Changelog ==
+
+= 4.08 =
+
+* WooCommerce 4.7.0 support.
+* Minor fixes.
 
 
 = 4.07 =

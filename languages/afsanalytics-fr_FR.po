@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AFS Analytics 2 3.90\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/afsanalytics\n"
-"POT-Creation-Date: 2020-08-26T12:05:14-04:00\n"
-"PO-Revision-Date: 2020-08-26 18:12+0200\n"
+"POT-Creation-Date: 2020-11-23T13:33:02-05:00\n"
+"PO-Revision-Date: 2020-11-23 19:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -35,21 +35,21 @@ msgstr ""
 "Solution Web Analytics complète. Facile à implémenter, en complément ou en "
 "remplacement de google analytics."
 
-#: includes/account/class-afsa-account-controller.php:155
+#: includes/account/class-afsa-account-controller.php:159
 msgid "Congratulations!"
 msgstr "Félicitations!"
 
-#: includes/account/class-afsa-account-controller.php:162
+#: includes/account/class-afsa-account-controller.php:166
 msgid "Your AFS Analytics plugin is now fully configured."
 msgstr "Votre plugin AFS Analytics est  maintenant configuré."
 
-#: includes/account/class-afsa-account-controller.php:169
+#: includes/account/class-afsa-account-controller.php:173
 msgid "Traffic and activity on your shop is now monitored in real time."
 msgstr ""
 "Le traffic comme l'activité sur votre site sont désormais analysés en temps "
 "réel."
 
-#: includes/account/class-afsa-account-controller.php:171
+#: includes/account/class-afsa-account-controller.php:175
 msgid ""
 "Detailed statistics will begin to appear in your plugin dashboard as soon as "
 "new visitors will be visiting it."
@@ -57,7 +57,7 @@ msgstr ""
 "Des statistiques détaillées commenceront à apparaître sur le tableau de bord "
 "du plugin dés que  de nouveaux visiteurs accéderont à votre site."
 
-#: includes/account/class-afsa-account-controller.php:177
+#: includes/account/class-afsa-account-controller.php:181
 msgid ""
 "You can retrieve your Account ID at any time by visiting this plugin "
 "configuration page."
@@ -65,23 +65,23 @@ msgstr ""
 "Votre numéro de compte est disponible dans la page de configuration du "
 "plugin."
 
-#: includes/account/class-afsa-account-controller.php:184
+#: includes/account/class-afsa-account-controller.php:188
 msgid "Thanks for using AFS analytics."
 msgstr "Merci d'utiliser AFS Analytics."
 
-#: includes/account/class-afsa-account-controller.php:193
+#: includes/account/class-afsa-account-controller.php:197
 msgid "Advanced configuration"
 msgstr "Paramètres avancés"
 
-#: includes/account/class-afsa-account-controller.php:197
+#: includes/account/class-afsa-account-controller.php:201
 msgid "Open Dashboard"
 msgstr "Ouvrir le Dashboard"
 
-#: includes/account/class-afsa-account-controller.php:201
+#: includes/account/class-afsa-account-controller.php:205
 msgid "Visit AFSAnalytics.com"
 msgstr "Découvrir AFSAnalytics.com"
 
-#: includes/api/oauth/class-afsa-oauth-client.php:164
+#: includes/api/oauth/class-afsa-oauth-client.php:160
 msgid "oauth_invalid_state"
 msgstr ""
 
@@ -426,13 +426,10 @@ msgid "Enable user tracking (default: checked)"
 msgstr "Activer le suivi des visiteurs ( activé par défaut )"
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab.php:168
-msgid ""
-"Check this option to anonymize visitor information in order to comply with "
-"data privacy laws in some countries."
+msgid "Check this option to anonymize visitor information."
 msgstr ""
 "Cochez cette case pour rendre anonymes les informations concernant les "
-"visiteurs et vous conformer ainsi aux lois de respect de la vie privée mises "
-"en place dans certains pays."
+"visiteurs."
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab.php:170
 msgid "Use users gravatar profile as default avatar image."

@@ -13,17 +13,21 @@ class AFSA_Visitor_Infos extends AFSA_Infos {
 	public function retrieve() {
 
 		$user = wp_get_current_user();
-		$info = $this->data;
 
 		$roles = $user->roles;
 		$role  = array_shift( $roles );
 
 		$info = array(
-			'id'     => $user->ID,
-			'yourid' => $user->ID,
 			'role'   => $role ?: 'visitor',
 			'logged' => is_user_logged_in(),
 		);
+
+				$custom_id = isset( $user->ID ) ? (int) $user->ID : 0;
+		if ( $custom_id ) {
+			$info['yourid'] = $custom_id;
+
+			error_log( '[YOURID] ' . $custom_id );
+		}
 
 		if ( ! empty( $user->user_login ) ) {
 			$info['username'] = esc_js( $user->user_login );

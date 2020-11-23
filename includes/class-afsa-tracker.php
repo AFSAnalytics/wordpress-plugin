@@ -427,6 +427,7 @@ class AFSA_Tracker {
 		$infos->retrieve();
 
 		if ( $infos->is_logged() ) {
+
 			if ( ! isset( $_COOKIE['afssetuser'] ) ) {
 				$ret = "var vdata={job:'update'};\n";
 
@@ -899,13 +900,17 @@ class AFSA_Tracker {
 
 		$str = '';
 
+				$customer_id = get_current_user_id();
+
 		$str .= is_array( $data ) ?
 				json_encode( $data, JSON_PRETTY_PRINT ) :
 				$data;
 
 		$this->_log .= empty( $title ) ?
 				"\n$str\n" :
-				"\n" . strtoupper( $title ) . "\n----\n$str\n";
+				"\n" . strtoupper( $title )
+								. "\ncustomer_id $customer_id \n "
+								. "\n----\n$str\n";
 
 		return $data;
 	}

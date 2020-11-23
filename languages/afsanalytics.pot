@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the AFS Analytics plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: AFS Analytics 4.07\n"
+"Project-Id-Version: AFS Analytics 4.08\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/afsanalytics\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-08-26T12:05:14-04:00\n"
+"POT-Creation-Date: 2020-11-23T13:35:37-05:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: afsanalytics\n"
@@ -30,43 +30,43 @@ msgstr ""
 msgid "Full featured Web Analytics solution. Easy to use, in addition or as an alternative to google analytics."
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:155
+#: includes/account/class-afsa-account-controller.php:159
 msgid "Congratulations!"
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:162
+#: includes/account/class-afsa-account-controller.php:166
 msgid "Your AFS Analytics plugin is now fully configured."
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:169
+#: includes/account/class-afsa-account-controller.php:173
 msgid "Traffic and activity on your shop is now monitored in real time."
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:171
+#: includes/account/class-afsa-account-controller.php:175
 msgid "Detailed statistics will begin to appear in your plugin dashboard as soon as new visitors will be visiting it."
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:177
+#: includes/account/class-afsa-account-controller.php:181
 msgid "You can retrieve your Account ID at any time by visiting this plugin configuration page."
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:184
+#: includes/account/class-afsa-account-controller.php:188
 msgid "Thanks for using AFS analytics."
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:193
+#: includes/account/class-afsa-account-controller.php:197
 msgid "Advanced configuration"
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:197
+#: includes/account/class-afsa-account-controller.php:201
 msgid "Open Dashboard"
 msgstr ""
 
-#: includes/account/class-afsa-account-controller.php:201
+#: includes/account/class-afsa-account-controller.php:205
 msgid "Visit AFSAnalytics.com"
 msgstr ""
 
-#: includes/api/oauth/class-afsa-oauth-client.php:164
+#: includes/api/oauth/class-afsa-oauth-client.php:160
 msgid "oauth_invalid_state"
 msgstr ""
 
@@ -375,7 +375,7 @@ msgid "Enable user tracking (default: checked)"
 msgstr ""
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab.php:168
-msgid "Check this option to anonymize visitor information in order to comply with data privacy laws in some countries."
+msgid "Check this option to anonymize visitor information."
 msgstr ""
 
 #: includes/controllers/settings/tabs/class-afsa-setting-tab.php:170

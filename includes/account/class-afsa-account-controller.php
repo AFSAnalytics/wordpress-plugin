@@ -146,6 +146,10 @@ class AFSA_Account_Controller {
 
 	public function render_welcome() {
 
+				print '<script>'
+					. "document.cookie = 'afssetuser=0;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';\n"
+					. '</script>';
+
 		print '<div class=afsa_welcome_container>'
 				. '<div class=afsa_content>'
 				. '<div class=afsa_header>'
