@@ -1,4 +1,5 @@
 /* global AFSA, s_nonce  */
+$ = jQuery;
 
 if (typeof jQuery !== 'undefined') {
 	jQuery(
@@ -46,7 +47,7 @@ if (typeof jQuery !== 'undefined') {
 						if (visible && ! started) {
 							run();
 						} else {
-							visible ? AFSA.dashboard().resume() : AFSA.dashboard().pause();
+							visible ? AFSA.Dashboard().resume() : AFSA.Dashboard().pause();
 						}
 					}
 				);
@@ -61,7 +62,7 @@ if (typeof jQuery !== 'undefined') {
 				window.setTimeout(
 					function () {
 
-							AFSA.dashboard()
+							AFSA.Dashboard()
 									.init(
 										{
 											id: 'maindb',

@@ -27,12 +27,9 @@ jQuery( document ).ready(
 					}
 			).dump();
 
-			AFSA.themes.manager()
-					.load();
-
 			window.setTimeout(
 				function () {
-						AFSA.dashboard.container().run();
+						AFSA.Dashboard().container().run();
 				},
 				1
 			);

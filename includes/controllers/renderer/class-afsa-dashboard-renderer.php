@@ -51,7 +51,7 @@ class AFSA_Dashboard_Renderer {
 
 			wp_enqueue_script(
 				$n . '.script',
-				$afsa_home . '/assets/js/wordpress/current/' . $n . '.js',
+				$afsa_home . '/assets/js/common/v2/' . $n . '.js',
 				array( 'jquery' ),
 				false // version
 			);
@@ -59,7 +59,7 @@ class AFSA_Dashboard_Renderer {
 	}
 
 	public static function get_dashboard_scripts() {
-		return array( 'd3.min', 'c3.min', 'chart.engine', 'dashboard' );
+		return array( 'd3.min', 'c3.min', 'dashboard' );
 	}
 
 	public function __construct() {

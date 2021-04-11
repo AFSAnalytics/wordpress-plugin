@@ -9,7 +9,7 @@ class AFSA_Admin_Widget_Dashboard_Renderer extends AFSA_Dashboard_Renderer {
 	}
 
 	public static function get_dashboard_scripts() {
-		return array( 'chart.engine', 'dashboard' );
+		return array( 'dashboard' );
 	}
 
 	public function __construct() {
@@ -50,7 +50,7 @@ class AFSA_Admin_Widget_Dashboard_Renderer extends AFSA_Dashboard_Renderer {
 		}
 
 		return '<div id = afsa_dashboard>'
-				. $this->render_widget( 'overview' )
+				. $this->render_widget( 'Overview' )
 				. '</div>'
 				. $this->render_js_data()
 				. '<script src="' . AFSA_Config::get_url( 'js/admin.widget.js' ) . '"></script>';
