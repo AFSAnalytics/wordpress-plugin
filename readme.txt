@@ -164,6 +164,9 @@ Now includes a full featured dashboard right inside your admin dashboard.
 
 == Changelog ==
 
+= 4.10 =
+
+* WooCommerce 5.3.0 support.
 
 = 4.09 =
 
