@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AFS Analytics 2 3.90\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/afsanalytics\n"
-"POT-Creation-Date: 2020-11-23T13:33:02-05:00\n"
-"PO-Revision-Date: 2020-11-23 19:35+0100\n"
+"POT-Creation-Date: 2021-10-12T11:12:18-04:00\n"
+"PO-Revision-Date: 2021-10-12 17:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -151,7 +151,7 @@ msgstr ""
 "cliquez simplement sur \"Lier mon compte\"."
 
 #: includes/controllers/renderer/class-afsa-account-form-renderer.php:22
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:29
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:37
 msgid "Website ID"
 msgstr ""
 
@@ -262,47 +262,51 @@ msgstr "Capture des vidéos"
 msgid "Iframe tracking"
 msgstr "Capture des iframes"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:37
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:45
 msgid "Your AFS Analytics Website ID"
 msgstr ""
 "Le numéro d'identification de votre site internet fourni part AFS Analytics "
 "(8 chiffres)"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:38
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:46
 msgid "Enter your AFS Analytics Website ID or"
 msgstr ""
 "Entrez le numéro d'identification de votre site internet fourni par  AFS "
 "Analytics (8 chiffres) ou"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:40
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:48
 msgid "Create a free Account"
 msgstr "Créez un compte gratuit"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:41
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:49
 msgid "if you do not have one yet"
 msgstr "si vous n'en avez pas un déjà"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:56
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:64
 msgid "Track Admin Page"
 msgstr "Capture des pages d'administration"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:57
-msgid "Track user loggin"
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:65
+msgid "Ignore my visits"
+msgstr "Ignorer mes visites"
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:66
+msgid "Track user login"
 msgstr "Capture des utilisateurs connectés"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:58
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:67
 msgid "Display day trends summary on Admin Dashboard"
 msgstr "Afficher les tendances du jour dans le back office"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:59
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:68
 msgid "Enable gravatar profile support"
 msgstr "Activer le support gravatar"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:65
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:80
 msgid "Access Key"
 msgstr "Clé d'accès"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:77
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:90
 msgid ""
 "An Access key allow you to access your AFS Analytics Dashboard without "
 "providing a password each time."
@@ -310,7 +314,7 @@ msgstr ""
 "Une clé d'accès vous permet d'accéder à AFSAnalytics.com sans devoir fournir "
 "un mot de passe à chaque fois."
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:80
+#: includes/controllers/settings/tabs/class-afsa-setting-tab-main.php:93
 msgid "Create an access key"
 msgstr "Créer une clé d'accès"
 
@@ -356,64 +360,64 @@ msgid ""
 "order processed by WooCommerce."
 msgstr "Le nom du canal de vente auquel attribuer par défaut les commandes."
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:91
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:93
 msgid "First party"
 msgstr "First party"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:92
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:94
 msgid "No Cookies"
 msgstr "Pas de cookies"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:95
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:102
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:97
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:104
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:96
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:98
 msgid "1 Byte"
 msgstr "1 Octet"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:97
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:99
 msgid "2 Bytes"
 msgstr "2 Octets"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:98
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:100
 msgid "3 Bytes"
 msgstr "3 Octets"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:99
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:101
 msgid "4 Bytes"
 msgstr "4 Octets"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:103
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:105
 msgid "Exemption"
 msgstr ""
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:104
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:106
 msgid "Auto"
 msgstr ""
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:107
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:109
 msgid "Europe"
 msgstr ""
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:108
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:110
 msgid "World"
 msgstr "Monde"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:118
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:120
 msgid "Off"
 msgstr "Désactivé"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:119
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:121
 msgid "On"
 msgstr "Activé"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:120
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:122
 msgid "Dataset"
 msgstr ""
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:164
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:166
 msgid ""
 "Check this if you want activity on your admin pages to be tracked (default: "
 "checked)"
@@ -421,20 +425,29 @@ msgstr ""
 "Cochez cette case si vous désirez que les visites sur les pages "
 "d'administration soient prises en compte ( activé par défaut )"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:166
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:168
+msgid ""
+"Check this if you do not want your own visits to be tracked (default: "
+"unchecked)"
+msgstr ""
+"Cochez cette case si vous désirez que vos propres visites ne soient prises "
+"en compte ( désactivé par défaut )"
+
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:170
 msgid "Enable user tracking (default: checked)"
 msgstr "Activer le suivi des visiteurs ( activé par défaut )"
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:168
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:172
 msgid "Check this option to anonymize visitor information."
 msgstr ""
 "Cochez cette case pour rendre anonymes les informations concernant les "
 "visiteurs."
 
-#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:170
+#: includes/controllers/settings/tabs/class-afsa-setting-tab.php:174
 msgid "Use users gravatar profile as default avatar image."
 msgstr ""
-"Utiliser le profile gravatar des visiteurs comme image de profile par default"
+"Utiliser le profile gravatar des visiteurs comme image de profile par "
+"default."
 
 #: includes/ui/class-afsa-post-title.php:12
 msgid "AFS Analytics tracker name"

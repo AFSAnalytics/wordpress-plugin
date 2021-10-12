@@ -3,8 +3,7 @@ p.afsa_help {
 }
 
 .afsa_button,
-.afsa_button:hover
-{
+.afsa_button:hover {
 	width: 150px;
 	background: #428bca;
 	color: white;

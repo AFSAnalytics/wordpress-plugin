@@ -72,7 +72,7 @@ class AFSA_Account_Form_Renderer {
 				. ' class="afsa_launch_demo afsa_button">' . __( 'Launch Demo', 'afsanalytics' ) . '</a>'
 				. '</div>'
 				. '<div class=afsa_img_container>'
-				. '<img class=afsa_screen src=' . AFSA_Config::get_url( 'assets/images/intro.screen.png' ) . '>'
+				. '<img class=afsa_screen src=' . AFSA_Config::get_url( 'assets/images/welcome.png' ) . '>'
 				. '</div>'
 				. '</div>'
 				. '<div class=afsa_row>'

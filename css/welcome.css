@@ -1,5 +1,5 @@
 body {
-	background: #526db0;
+	background: #212b44;
 }
 
 #wpcontent {
@@ -67,7 +67,7 @@ body {
 .afsa_title .afsa_label,
 .afsa_headline,
 .afsa_thanks {
-	color: #526db0;
+	color: #212b44;
 	font-size: 22px;
 	padding: 10px;
 	font-weight: 500;
@@ -117,11 +117,13 @@ body {
 	min-width: 200px;  cursor: pointer;
 	text-align: center;
 	transition: all 300ms ease;
+	border-radius: 6px;
 }
 
 .afsa_button.afsa_selected,
 .afsa_button:hover {
 	background: #428bca;
+	/*background: #e62640;*/
 	color: white !important;
 	border: none;
 	text-decoration: none;

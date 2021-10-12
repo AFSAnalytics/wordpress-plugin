@@ -34,15 +34,14 @@
 /* ACCOUNT FORM */
 
 .afsa_account_cnt {
-	flex:  1 1;
+	flex: 1 1;
 	display: flex;
 }
 
 
 
 .afsa_button,
-.afsa_button:hover
-{
+.afsa_button:hover {
 	min-width: 200px;
 	background: #428bca;
 	color: white;
@@ -91,9 +90,7 @@ div.afsa_create_account {
 }
 
 
-body:not(.mobile) div.afsa_create_account {
-
-}
+body:not(.mobile) div.afsa_create_account {}
 
 
 

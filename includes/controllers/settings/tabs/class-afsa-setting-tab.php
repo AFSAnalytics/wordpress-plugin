@@ -26,8 +26,8 @@ class AFSA_Setting_Tab {
 
 	public function option_value( $field ) {
 		return isset( $this->settings[ $field ] ) ?
-				$this->settings[ $field ] :
-				null;
+			$this->settings[ $field ] :
+			null;
 	}
 
 	// SECTION
@@ -145,13 +145,13 @@ class AFSA_Setting_Tab {
 		$v = $this->option_value( $field );
 
 		$ret = '<select  '
-				. $this->input_name( $field )
-				. '>';
+			. $this->input_name( $field )
+			. '>';
 
-		foreach ( static::get_select_options( $field ) as $data ) {
+		foreach ( $this->get_select_options( $field ) as $data ) {
 			$ret .= '<option value="' . $data[0] . '" '
-					. ( $v == $data[0] ? 'selected="selected"' : '' )
-					. '>' . $data[1] . '</option>';
+				. ( $v == $data[0] ? 'selected="selected"' : '' )
+				. '>' . $data[1] . '</option>';
 		}
 
 		return $this->render_field( $field, $ret . '</select>' );
@@ -162,6 +162,8 @@ class AFSA_Setting_Tab {
 		$help = array(
 			'admin_pages_tracking'     =>
 			__( 'Check this if you want activity on your admin pages to be tracked (default: checked)', 'afsanalytics' ),
+			'self_visits_hidden'       =>
+			__( 'Check this if you do not want your own visits to be tracked (default: unchecked)', 'afsanalytics' ),
 			'user_logged_tracking'     =>
 			__( 'Enable user tracking (default: checked)', 'afsanalytics' ),
 			'afsa_anon_user_infos'     =>
@@ -175,5 +177,4 @@ class AFSA_Setting_Tab {
 			print '<p class=afsa_help>' . $help[ $field ] . '</div>';
 		}
 	}
-
 }

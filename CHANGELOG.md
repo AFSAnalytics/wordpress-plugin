@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## 4.0.11 - 2021-10-13
+
+- Added ability to hide own visits via settings.
+- Wordpress 5.8.1 support.
+- WooCommerce 5.7.1 support.
+
 ## 4.0.11 - 2021-09-05
 
 - Wordpress 5.8 support.

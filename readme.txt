@@ -1,9 +1,9 @@
 ﻿=== AFS Analytics ===
 Contributors: AddFreeStats
 Requires at least: 3.5.0
-Tested up to: 5.8
+Tested up to: 5.8.1
 Requires PHP: 5.3
-Stable tag: 4.11
+Stable tag: 4.12
 Tags: analytics, afsanalytics, heatmaps, web analytics, website statistics, event tracking, real-time analytics, analytics dashboard, tracking, track visitor, admin tracking, statistics, counter, stats, track page, tracker, geolocation, sale tracking, user tracking, real-time tracking, visitor tracking, track visitors, ip tracking,  online users, pageviews, admin tracking, counter, e-commerce tracking, track keyword, keyword position, woocommerce tracking, predictive analytics, referrer, website analytics
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -164,6 +164,12 @@ Now includes a full featured dashboard right inside your admin dashboard.
 
 == Changelog ==
 
+= 4.12 =
+
+* Added ability to hide own visits via settings.
+* Wordpress 5.8.1 support.
+* WooCommerce 5.7.1 support.
+
 = 4.11 =
 
 * Wordpress 5.8 support.
@@ -191,15 +197,15 @@ Now includes a full featured dashboard right inside your admin dashboard.
 * Wordpress 5.5 support.
 * WooCommerce 4.4.1 support.
 * Login process simplification. 
-* Improved WooComerce checkout steps detection. 
-* Added fr_CA and fr_BE localisation files.
+* Improved WooCommerce checkout steps detection. 
+* Added fr_CA and fr_BE localization files.
 
 
 = 4.06 =
 
 * Added Gravatar support.
 * WooCommerce 4.3.0 support.
-* Fixed bug occuring when setting some GDPR options.
+* Fixed bug occurring when setting some GDPR options.
 
 
 = 4.05 =

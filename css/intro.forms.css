@@ -3,7 +3,7 @@
 
 
 .afsa_intro_title {
-	color: #526db0;
+	color: #212b44;
 	font-size: 22px;
 	padding: 20px;
 	font-weight: 500;
@@ -11,8 +11,7 @@
 }
 
 .afsa_button,
-.afsa_button:hover
-{
+.afsa_button:hover {
 	background: #428bca;
 	color: white !important;
 	border: none;
@@ -55,7 +54,7 @@ form.afsa_existing_account input[type="text"] {
 	margin: auto;
 	margin-top: 50px;
 	flex-wrap: wrap;
-	background: rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 	transition: all 300ms ease;
 	cursor: default;
 	overflow: hidden;
@@ -107,17 +106,17 @@ form.afsa_existing_account .afsa_form_help {
 }
 
 .afsa_demo_form .afsa_img_container {
-	order:2;
+	order: 2;
 	flex: 0 0;
 }
 
 .afsa_demo_form img {
-	height: 220px;
+	height: 200px;
 	flex: 0 0;
 }
 
 .afsa_demo_form .afsa_title {
-	color: #526db0;
+	color: #212b44;
 	font-size: 22px;
 	flex: 0 0;
 	font-weight: 500;

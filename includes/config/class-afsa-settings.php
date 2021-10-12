@@ -36,6 +36,7 @@ class AFSA_Settings {
 				'account_id'               => get_option( 'afs_account', 0 ),
 				'accesskey'                => get_option( 'afs_accesskey' ),
 				'admin_pages_tracking'     => get_option( 'afs_admin_pages_tracking', 1 ),
+				'self_visits_hidden'       => get_option( 'afs_self_visits_hidden', 0 ),
 				'user_logged_tracking'     => get_option( 'afs_user_logged_tracking', 1 ),
 				'display_admin_summary'    => get_option( 'afs_udisplay_admin_summary', 1 ),
 				'gravatar_profile_enabled' => get_option( 'afs_gravatar_profile_enabled', 0 ),
