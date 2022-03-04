@@ -2,3 +2,4 @@ __*
 .php_cs*
 dev
 local
+.history
