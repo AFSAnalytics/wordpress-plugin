@@ -27,7 +27,7 @@ class AFSA_Account {
 	}
 
 	public function advanced_ecom_enabled() {
-		return $this->get_plan_id() == 4;
+		return $this->ecom_enabled();
 	}
 
 	public function ecom_enabled() {
