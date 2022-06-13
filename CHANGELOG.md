@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## 4.0.15 - 2022-06-13
+
+- Wordpress 6.0 support.
+- WooCommerce 6.5.1 support.
+
+
 ## 4.0.14 - 2022-03-06
 
 - WooCommerce fix.
