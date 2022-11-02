@@ -74,13 +74,13 @@ class AFSA_Dashboard_Renderer {
 
 	public function api_login() {
 
-			$api = static::$api ?
-					static::$api :
-					new AFSA_Api();
+		$api = static::$api ?
+			static::$api :
+			new AFSA_Api();
 
-				$this->afsa_api = $api;
+		$this->afsa_api = $api;
 
-				$api->simple_login();
+		$api->simple_login();
 		return $api->is_logged();
 	}
 
@@ -101,12 +101,12 @@ class AFSA_Dashboard_Renderer {
 
 	public function prepare_common_template( $content = '' ) {
 		$this->template = $this->render_widget( 'topmenubar' )
-				. '<div id=afsa_col_infos>'
-				. $this->render_widget( 'config' )
-				. '</div>'
-				. '<div id=afsa_col_widgets>'
-				. $content
-				. '</div>';
+			. '<div id=afsa_col_infos>'
+			. $this->render_widget( 'config' )
+			. '</div>'
+			. '<div id=afsa_col_widgets>'
+			. $content
+			. '</div>';
 	}
 
 	public function render_widget( $type, $options = null ) {
@@ -117,8 +117,8 @@ class AFSA_Dashboard_Renderer {
 		}
 
 		return '<div class="afsa_requested_widget afsa_widget_' . $type . '"'
-				. $dataset . '>'
-				. '</div>';
+			. $dataset . '>'
+			. '</div>';
 	}
 
 	protected function render_js_config() {
@@ -161,17 +161,25 @@ class AFSA_Dashboard_Renderer {
 					'template' => 'ecom',
 				),
 			);
+		} else {
+
+			$cfg['ecom'] = array(
+				'enabled'            => 0,
+				'level'              => 'limited',
+				'currency'           => AFSA_Config::get_global_currency_code(),
+				'unsupported_brands' => true,
+			);
 		}
 
-		$cfg['dashboard'] ['host'] = AFSA_Config::CMS();
-		$cfg['dashboard'] ['type'] = 'plugin';
+		$cfg['dashboard']['host'] = AFSA_Config::CMS();
+		$cfg['dashboard']['type'] = 'plugin';
 
 		if ( AFSA_Config::is_demo() ) {
 			$cfg['dashboard']['orders_ip_check_disabled'] = 1;
 			$cfg['demo_mode']                             = 1;
 		} else {
 
-						$plan = $account->plan_infos();
+			$plan = $account->plan_infos();
 
 			$cfg['account_infos'] = array(
 				'id'   => $this->account_id,
@@ -209,36 +217,35 @@ class AFSA_Dashboard_Renderer {
 		}
 
 		return $this->render_notice()
-				. '<div id = afsa_container></div>'
-				. $this->render_js_data()
-				. '<script src = "' . AFSA_Config::get_url( '/js/dashboard.js' ) . '"></script>';
+			. '<div id = afsa_container></div>'
+			. $this->render_js_data()
+			. '<script src = "' . AFSA_Config::get_url( '/js/dashboard.js' ) . '"></script>';
 	}
 
 	private function render_notice() {
 		return AFSA_Config::is_demo() ?
-				'<div id=afsa_demo_notice>'
-				. '<div class=afsa_logo_container>'
-				. '<img class=afsa_logo src=' . AFSA_Config::get_url( 'assets/images/logo.small.png' ) . '>'
-				. '<div class=afsa_form>'
-				. '<div class="afsa_create_account afsa_button"> ' . __( 'Create your very own Account', 'afsanalytics' ) . '</div>'
-				. '</div>'
-				. '</div>'
-				. '<div class=afsa_content>'
-				. '<div class=afsa_headline>'
-				. __( 'Live Demo', 'afsanalytics', 'afsanalytics' )
-				. '</div>'
-				. '<div class=afsa_text><div>'
-				. __( 'This dashboard is displaying in real time the activity of a WordPress website running a Woocomerce eShop.', 'afsanalytics' )
-				. '</div><div>'
-				. __( 'To monitor your own website, you will have to open your own account.', 'afsanalytics' )
-				. '</div></div>'
-				. '</div>'
-				. '</div>'
-				. AFSA_Tools::render_js_data(
-					array( 'AFSA_site_infos' => AFSA_Account_Manager::get()->get_account_creation_params() )
-				)
-				. '<script src = "' . AFSA_Config::get_url( '/js/intro.js' ) . '"></script>' :
-				null;
+			'<div id=afsa_demo_notice>'
+			. '<div class=afsa_logo_container>'
+			. '<img class=afsa_logo src=' . AFSA_Config::get_url( 'assets/images/logo.small.png' ) . '>'
+			. '<div class=afsa_form>'
+			. '<div class="afsa_create_account afsa_button"> ' . __( 'Create your very own Account', 'afsanalytics' ) . '</div>'
+			. '</div>'
+			. '</div>'
+			. '<div class=afsa_content>'
+			. '<div class=afsa_headline>'
+			. __( 'Live Demo', 'afsanalytics', 'afsanalytics' )
+			. '</div>'
+			. '<div class=afsa_text><div>'
+			. __( 'This dashboard is displaying in real time the activity of a WordPress website running a Woocomerce eShop.', 'afsanalytics' )
+			. '</div><div>'
+			. __( 'To monitor your own website, you will have to open your own account.', 'afsanalytics' )
+			. '</div></div>'
+			. '</div>'
+			. '</div>'
+			. AFSA_Tools::render_js_data(
+				array( 'AFSA_site_infos' => AFSA_Account_Manager::get()->get_account_creation_params() )
+			)
+			. '<script src = "' . AFSA_Config::get_url( '/js/intro.js' ) . '"></script>' :
+			null;
 	}
-
 }

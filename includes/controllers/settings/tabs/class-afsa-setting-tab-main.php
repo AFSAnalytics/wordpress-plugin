@@ -76,11 +76,12 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 			__( 'Access Key', 'afsanalytics' ),
 			function () {
 
+				$key_value = ! empty( $this->settings['accesskey'] ) ?
+				strip_tags( $this->settings['accesskey'] ) : '';
+
 				print '<input type="text"   '
 					. $this->input_name( 'accesskey' )
-					. 'value=' . ( empty( $this->settings['accesskey'] ) ?
-						'' :
-						$this->settings['accesskey'] )
+					. 'value=' . ( htmlspecialchars( $key_value ) )
 					. '>'
 					. '<p class="afsa_help ">'
 					. __( 'An Access key allow you to access your AFS Analytics Dashboard without providing a password each time.', 'afsanalytics' )

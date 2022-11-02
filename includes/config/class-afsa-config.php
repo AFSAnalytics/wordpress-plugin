@@ -24,8 +24,8 @@ class AFSA_Config {
 
 	public static function CMS() {
 		return static::$woocommerce_enabled ?
-				'woocommerce' :
-				'WordPress';
+			'woocommerce' :
+			'WordPress';
 	}
 
 	public static function CMS_version() {
@@ -38,7 +38,6 @@ class AFSA_Config {
 			try {
 				return (float) WC()->version;
 			} catch ( \Exception $e ) {
-
 			}
 		}
 		return null;
@@ -48,8 +47,8 @@ class AFSA_Config {
 		$woo_version = static::woo_version();
 
 		return $woo_version ?
-				version_compare( $woo_version, $version, '>=' ) :
-				true;
+			version_compare( $woo_version, $version, '>=' ) :
+			true;
 	}
 
 	public static function plugin_name() {
@@ -92,7 +91,6 @@ class AFSA_Config {
 				return true;
 			}
 		} catch ( Exception $ex ) {
-
 		}
 
 		return false;
@@ -192,13 +190,13 @@ class AFSA_Config {
 	}
 
 	public static function get_access_key() {
-		return trim( static::get_option( 'accesskey' ) );
+		return trim( preg_replace( '/[^a-zA-Z0-9]+/', '', strip_tags( static::get_option( 'accesskey' ) ) ) );
 	}
 
 	public static function get_account_id() {
 		return static::is_demo() ?
-				static::DEMO_ACCOUNT_ID :
-				static::get_option( 'account_id' );
+			static::DEMO_ACCOUNT_ID :
+			static::get_option( 'account_id' );
 	}
 
 	public static function woocommerce_enabled() {
@@ -233,8 +231,8 @@ class AFSA_Config {
 	public static function get_paa_rc() {
 		$options = get_option( 'afsa_paa_rc' );
 		return empty( $options['id'] ) ?
-				null :
-				$options['id'];
+			null :
+			$options['id'];
 	}
 
 	public static function advanced_ecommerce_enabled() {
@@ -325,16 +323,16 @@ class AFSA_Config {
 
 	public static function should_track() {
 		if (
-				static::is_ajax() ||
-				static::is_demo() ||
-				! static::afsa_enabled()
+			static::is_ajax() ||
+			static::is_demo() ||
+			! static::afsa_enabled()
 		) {
 			return false;
 		}
 
 		if ( static::is_back_office() ) {
 			return self::track_admin_pages() ||
-					self::are_admin_tracking_infos_available();
+				self::are_admin_tracking_infos_available();
 		}
 
 		return true;
@@ -396,8 +394,8 @@ class AFSA_Config {
 	public static function are_admin_tracking_infos_available() {
 
 		if (
-				! empty( static::get_refunded_orders() ) ||
-				! empty( static::get_updated_order_status() )
+			! empty( static::get_refunded_orders() ) ||
+			! empty( static::get_updated_order_status() )
 		) {
 			return true;
 		}
@@ -457,8 +455,8 @@ class AFSA_Config {
 
 	public static function get_current_url() {
 		return static::get_current_sheme()
-				. '://' . $_SERVER['HTTP_HOST']
-				. $_SERVER['REQUEST_URI'];
+			. '://' . $_SERVER['HTTP_HOST']
+			. $_SERVER['REQUEST_URI'];
 	}
 
 	public static function get_ajax_server_url() {
@@ -507,5 +505,4 @@ class AFSA_Config {
 	public static function get_request_state() {
 		return get_option( AFSA_REQUEST_STATE );
 	}
-
 }
