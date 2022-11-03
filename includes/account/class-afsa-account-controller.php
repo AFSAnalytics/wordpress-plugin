@@ -9,13 +9,13 @@ class AFSA_Account_Controller {
 
 	public static function get() {
 		return static::$instance ?
-				static::$instance :
-				static::$instance = new AFSA_Account_Controller();
+			static::$instance :
+			static::$instance = new AFSA_Account_Controller();
 	}
 
 	private function validate_state() {
 		$state = ! empty( $_REQUEST['afsa_state'] ) &&
-				AFSA_Config::get_request_state() === $_REQUEST['afsa_state'];
+			AFSA_Config::get_request_state() === sanitize_text_field( $_REQUEST['afsa_state'] );
 
 		if ( ! $state ) {
 			AFSA_Tools::log( __METHOD__, 'invalid state' );
@@ -26,10 +26,10 @@ class AFSA_Account_Controller {
 	}
 
 	public function on_action_completed() {
-		$r = & $_REQUEST;
+		$r = &$_REQUEST;
 
 		if ( ! empty( $r['afsa_action'] ) ) {
-			switch ( $r['afsa_action'] ) {
+			switch ( sanitize_text_field( $r['afsa_action'] ) ) {
 
 				case 'account_created':
 					$this->on_account_created();
@@ -82,7 +82,7 @@ class AFSA_Account_Controller {
 			return false;
 		}
 
-		$account_id = filter_var( $_REQUEST['account_id'], FILTER_SANITIZE_STRING );
+		$account_id = sanitize_text_field( $_REQUEST['account_id'] );
 		if ( AFSA_Account_Manager::get()->set_current( $account_id ) ) {
 
 			$this->on_account_set( $account_id );
@@ -104,8 +104,8 @@ class AFSA_Account_Controller {
 
 		$this->validate_state();
 
-		$r  = & $_REQUEST;
-		$id = filter_var( $r['afsa_account_id'], FILTER_SANITIZE_STRING );
+		$r  = &$_REQUEST;
+		$id = sanitize_text_field( $r['afsa_account_id'] );
 
 		// Saving account infos
 		$account = AFSA_Account_Manager::get()->set_current( $id );
@@ -115,8 +115,8 @@ class AFSA_Account_Controller {
 
 		if ( ! empty( $r['afsa_trial_type'] ) ) {
 			$account->set_trial(
-				$r['afsa_trial_type'],
-				empty( $r['afsa_trial_period'] ) ? 0 : $r['afsa_trial_period']
+				sanitize_text_field( $r['afsa_trial_type'] ),
+				empty( $r['afsa_trial_period'] ) ? null : sanitize_text_field( $r['afsa_trial_period'] )
 			);
 		}
 		$account->save();
@@ -146,67 +146,66 @@ class AFSA_Account_Controller {
 
 	public function render_welcome() {
 
-				print '<script>'
-					. "document.cookie = 'afssetuser=0;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';\n"
-					. '</script>';
+		print '<script>'
+			. "document.cookie = 'afssetuser=0;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';\n"
+			. '</script>';
 
 		print '<div class=afsa_welcome_container>'
-				. '<div class=afsa_content>'
-				. '<div class=afsa_header>'
-				. '<div class=afsa_title>'
-				. '<img class=afsa_logo src=' . AFSA_Config::get_url( 'assets/images/logo.small.png' ) . '>'
-				. '<div class=afsa_label>'
-				. __(
-					'Congratulations!',
-					'afsanalytics'
-				)
-				. '</div>'
-				. '</div>'
-				. '<div class=afsa_headline>'
-				. __(
-					'Your AFS Analytics plugin is now fully configured.',
-					'afsanalytics'
-				)
-				. '</div>'
-				. '</div>'
-				. '<p>'
-				. __( 'Traffic and activity on your shop is now monitored in real time.', 'afsanalytics' )
-				. ' '
-				. __(
-					'Detailed statistics will begin to appear in your plugin dashboard as soon as new visitors will be visiting it.',
-					'afsanalytics'
-				)
-				. '</p>'
-				. '<p>'
-				. __(
-					'You can retrieve your Account ID at any time by visiting this plugin configuration page.',
-					'afsanalytics'
-				)
-				. '</p>'
-				. '<div class=afsa_footer>'
-				. '<div class=afsa_thanks>'
-				. __(
-					'Thanks for using AFS analytics.',
-					'afsanalytics'
-				)
-				. '</div>'
-				. '</div>'
-				. '<div class=afsa_button_bar>'
-								. '<a href="' . AFSA_Config::get_config_controller_url() . '" '
-				. ' class="afsa_button">'
-				. __( 'Advanced configuration', 'afsanalytics' )
-				. '</a>'
-								. '<a href="' . AFSA_Config::get_dashboard_url() . '" '
-				. ' class="afsa_button afsa_selected">'
-				. __( 'Open Dashboard', 'afsanalytics' )
-				. '</a>'
-								. '<a href="' . AFSA_Route_Manager::get_dashboard_url() . '" '
-				. ' class="afsa_button">'
-				. __( 'Visit AFSAnalytics.com', 'afsanalytics' )
-				. '</a>'
-				. '</div>'
-				. '</div>' // afsa_content
-				. '</div>'; // container
+			. '<div class=afsa_content>'
+			. '<div class=afsa_header>'
+			. '<div class=afsa_title>'
+			. '<img class=afsa_logo src=' . AFSA_Config::get_url( 'assets/images/logo.small.png' ) . '>'
+			. '<div class=afsa_label>'
+			. __(
+				'Congratulations!',
+				'afsanalytics'
+			)
+			. '</div>'
+			. '</div>'
+			. '<div class=afsa_headline>'
+			. __(
+				'Your AFS Analytics plugin is now fully configured.',
+				'afsanalytics'
+			)
+			. '</div>'
+			. '</div>'
+			. '<p>'
+			. __( 'Traffic and activity on your shop is now monitored in real time.', 'afsanalytics' )
+			. ' '
+			. __(
+				'Detailed statistics will begin to appear in your plugin dashboard as soon as new visitors will be visiting it.',
+				'afsanalytics'
+			)
+			. '</p>'
+			. '<p>'
+			. __(
+				'You can retrieve your Account ID at any time by visiting this plugin configuration page.',
+				'afsanalytics'
+			)
+			. '</p>'
+			. '<div class=afsa_footer>'
+			. '<div class=afsa_thanks>'
+			. __(
+				'Thanks for using AFS analytics.',
+				'afsanalytics'
+			)
+			. '</div>'
+			. '</div>'
+			. '<div class=afsa_button_bar>'
+			. '<a href="' . AFSA_Config::get_config_controller_url() . '" '
+			. ' class="afsa_button">'
+			. __( 'Advanced configuration', 'afsanalytics' )
+			. '</a>'
+			. '<a href="' . AFSA_Config::get_dashboard_url() . '" '
+			. ' class="afsa_button afsa_selected">'
+			. __( 'Open Dashboard', 'afsanalytics' )
+			. '</a>'
+			. '<a href="' . AFSA_Route_Manager::get_dashboard_url() . '" '
+			. ' class="afsa_button">'
+			. __( 'Visit AFSAnalytics.com', 'afsanalytics' )
+			. '</a>'
+			. '</div>'
+			. '</div>' // afsa_content
+			. '</div>'; // container
 	}
-
 }

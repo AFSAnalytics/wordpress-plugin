@@ -99,12 +99,7 @@ class AFSA_Settings {
 		  } */
 	}
 
-	public function dump() {
-		print '<pre>';
-		var_dump( $this->options );
-		print '</pre>';
-		exit;
-	}
+
 
 	public function get_group( $name ) {
 		$key = str_replace( AFSA_SETTINGS_PREFIX, '', $name );

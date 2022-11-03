@@ -31,8 +31,8 @@ class AFSA_OAuth_Client {
 
 		$this->client_id = AFSA_Config::get_oauth_client_id();
 		$this->token     = AFSA_Config::is_demo() ?
-				new AFSA_OAuth_Demo_Token( $account_id ) :
-				new AFSA_OAuth_Token( $account_id );
+			new AFSA_OAuth_Demo_Token( $account_id ) :
+			new AFSA_OAuth_Token( $account_id );
 	}
 
 	public function get_resource_url() {
@@ -147,20 +147,20 @@ class AFSA_OAuth_Client {
 			'msg'   => array(),
 		);
 
+		$state = sanitize_text_field( $_REQUEST['state'] );
 		AFSA_Tools::log(
 			__METHOD__,
 			array(
-				$_REQUEST,
-				$_REQUEST['state'],
+				$state,
 				get_option( 'afs_analytics_oauth_state' ),
 			)
 		);
 
-		if ( $_REQUEST['state'] !== AFSA_Config::get_oauth_state() ) {
+		if ( $state !== AFSA_Config::get_oauth_state() ) {
 			$ret['msg'][] = __( 'oauth_invalid_state', 'afsanalytics' );
 		}
 
-		$code = filter_var( $_REQUEST['code'], FILTER_SANITIZE_STRING );
+		$code = sanitize_text_field( $_REQUEST['code'] );
 
 		// RETRIEVE TOKEN FROM CODE
 
@@ -201,8 +201,8 @@ class AFSA_OAuth_Client {
 			AFSA_Tools::log( 'ERR2', $data['error_description'] );
 
 			switch ( $r->get_status_code() ) {
-				// authorization code is invalide
-				// need to restart auth process
+					// authorization code is invalide
+					// need to restart auth process
 				case 400: // TODO ?
 					// $this->request_authorization_code();
 					break;
@@ -260,5 +260,4 @@ class AFSA_OAuth_Client {
 
 		return false;
 	}
-
 }

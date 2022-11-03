@@ -39,9 +39,10 @@ class AFSA_Account_Form_Renderer {
 
 	public static function redirect_on_account_linked() {
 
-		$account_id = empty( $_POST['afsa_linked_account_id'] ) ?
+		$post_data  = &$_POST;
+		$account_id = empty( $post_data['afsa_linked_account_id'] ) ?
 				null :
-				filter_var( $_POST['afsa_linked_account_id'], FILTER_SANITIZE_STRING );
+				sanitize_text_field( $post_data['afsa_linked_account_id'] );
 
 		if ( AFSA_Config::validate_account_id( $account_id ) ) {
 

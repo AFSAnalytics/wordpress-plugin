@@ -186,17 +186,17 @@ class AFSA_Config {
 	}
 
 	public static function get_shop_affiliation() {
-		return static::get_option( 'woocommerce_shop_affiliation', 'WooCommerce' );
+		return sanitize_text_field( static::get_option( 'woocommerce_shop_affiliation', 'WooCommerce' ) );
 	}
 
 	public static function get_access_key() {
-		return trim( preg_replace( '/[^a-zA-Z0-9]+/', '', strip_tags( static::get_option( 'accesskey' ) ) ) );
+		return trim( sanitize_text_field( static::get_option( 'accesskey' ) ) );
 	}
 
 	public static function get_account_id() {
 		return static::is_demo() ?
 			static::DEMO_ACCOUNT_ID :
-			static::get_option( 'account_id' );
+			sanitize_text_field( static::get_option( 'account_id' ) );
 	}
 
 	public static function woocommerce_enabled() {
@@ -261,7 +261,7 @@ class AFSA_Config {
 	}
 
 	/**
-	 * Check if we have a valid AFSA acount number
+	 * Check if we have a valid AFSA account number
 	 *
 	 * @return bool
 	 */
@@ -454,9 +454,7 @@ class AFSA_Config {
 	}
 
 	public static function get_current_url() {
-		return static::get_current_sheme()
-			. '://' . $_SERVER['HTTP_HOST']
-			. $_SERVER['REQUEST_URI'];
+		return sanitize_url( static::get_current_sheme() . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
 	}
 
 	public static function get_ajax_server_url() {

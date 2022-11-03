@@ -5,7 +5,7 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 	public function init() {
 
 		if ( isset( $_GET['account_id'] ) ) {
-			$account_id = $_GET['account_id'];
+			$account_id = sanitize_text_field( $_GET['account_id'] );
 
 			if ( AFSA_Config::validate_account_id( $account_id ) ) {
 				$this->settings['account_id'] = $account_id;
@@ -13,9 +13,11 @@ class AFSA_Setting_Tab_Main extends AFSA_Setting_Tab {
 		}
 
 		if ( isset( $_GET['afsa_result_ip_removal'] ) ) {
-			$enabled = (int) $_GET['afsa_result_ip_removal'] % 2;
+			$result  = (int) sanitize_text_field( $_GET['afsa_result_ip_removal'] );
+			$enabled = $result % 2;
 			update_option( 'afs_self_visits_hidden', $enabled );
 		}
+
 		$this->settings['self_visits_hidden'] = get_option( 'afs_self_visits_hidden' );
 
 		$account_id = empty( $this->settings['account_id'] ) ?

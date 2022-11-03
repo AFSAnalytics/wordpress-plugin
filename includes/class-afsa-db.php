@@ -107,7 +107,7 @@ class AFSA_DB {
 
 		$ids = array_map(
 			function( $n ) {
-					return "'" . filter_var( $n, FILTER_SANITIZE_STRING ) . "'";
+					return "'" . sanitize_text_field( $n ) . "'";
 			},
 			$skus
 		);

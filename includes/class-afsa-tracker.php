@@ -892,7 +892,7 @@ class AFSA_Tracker {
 	}
 
 	public function log( $data, $title = '' ) {
-		$title .= $_SERVER['REQUEST_URI'] . "\n\n"; // "\n[" . Tools::getValue('controller') . '/' . Tools::getValue('action') . ']';
+		$title .= sanitize_url( $_SERVER['REQUEST_URI'] ) . "\n\n"; // "\n[" . Tools::getValue('controller') . '/' . Tools::getValue('action') . ']';
 
 		if ( AFSA_Config::is_ajax() ) {
 			$title .= ' [ CALLED VIA AJAX ] ';

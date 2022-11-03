@@ -23,12 +23,13 @@ class AFSA_Post_Title_Field {
 
 		$id         = $post_id;
 		$page_title = null;
+		$post_data  = &$_POST;
 
 		if ( $id ) {
-			if ( isset( $_POST['afstrackername'] ) ) {
-				$page_title = sanitize_text_field( $_POST['afstrackername'] );
-			} elseif ( isset( $_POST['post_title'] ) ) {
-				$page_title = sanitize_text_field( $_POST['post_title'] );
+			if ( isset( $post_data['afstrackername'] ) ) {
+				$page_title = sanitize_text_field( post_data['afstrackername'] );
+			} elseif ( isset( $post_data['post_title'] ) ) {
+				$page_title = sanitize_text_field( $post_data['post_title'] );
 			}
 
 			if ( empty( $page_title ) ) {

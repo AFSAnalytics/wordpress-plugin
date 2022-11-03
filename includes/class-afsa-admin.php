@@ -73,7 +73,7 @@ class AFSA_Admin {
 
 		$page = empty( $_GET['page'] ) ?
 				null :
-				$_GET['page'];
+				sanitize_text_field( $_GET['page'] );
 
 		switch ( $page ) {
 

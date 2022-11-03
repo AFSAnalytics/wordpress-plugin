@@ -11,13 +11,14 @@ class AFSA_Api_Request {
 	private $requested_actions;
 
 	public function __construct() {
+		$post_data = &$_POST;
 
-		if ( $_POST['account_id'] === AFSA_Config::DEMO_ACCOUNT_ID ) {
+		if ( $post_data['account_id'] === AFSA_Config::DEMO_ACCOUNT_ID ) {
 			AFSA_Config::set_demo_mode();
 		}
 
-		$this->requested_actions = empty( $_POST['actions'] ) ? null : $_POST['actions'];
-		$this->context           = empty( $_POST['context'] ) ? null : $_POST['context'];
+		$this->requested_actions = empty( $post_data['actions'] ) ? null : $post_data['actions'];
+		$this->context           = empty( $post_data['context'] ) ? null : $post_data['context'];
 	}
 
 	public function run() {

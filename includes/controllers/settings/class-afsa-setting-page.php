@@ -57,7 +57,7 @@ class AFSA_Setting_Page {
 
 		$tab_id = empty( $_GET['afsa_tab'] ) ?
 				'afsa_tab_main' :
-				filter_var( $_GET['afsa_tab'], FILTER_SANITIZE_STRING );
+				sanitize_text_field( $_GET['afsa_tab'] );
 
 		$class              = $this->class_from_tab_id( $tab_id );
 		$this->selected_tab = new $class(
@@ -110,7 +110,7 @@ class AFSA_Setting_Page {
 
 		foreach ( $this->tabs as $tab => $label ) {
 
-			print '<a href="?page=' . $_GET['page'] . '&afsa_tab=' . $tab
+			print '<a href="?page=' . sanitize_text_field( $_GET['page'] ) . '&afsa_tab=' . $tab
 					. '" class="nav-tab '
 					. ( $active_tab === $tab ? 'nav-tab-active' : '' )
 					. '">'
