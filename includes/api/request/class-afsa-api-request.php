@@ -11,14 +11,31 @@ class AFSA_Api_Request {
 	private $requested_actions;
 
 	public function __construct() {
-		$post_data = &$_POST;
 
-		if ( $post_data['account_id'] === AFSA_Config::DEMO_ACCOUNT_ID ) {
+		if ( sanitize_text_field( $_POST['account_id'] ) === AFSA_Config::DEMO_ACCOUNT_ID ) {
 			AFSA_Config::set_demo_mode();
 		}
 
-		$this->requested_actions = empty( $post_data['actions'] ) ? null : $post_data['actions'];
-		$this->context           = empty( $post_data['context'] ) ? null : $post_data['context'];
+		/*
+		$_POST['actions'] and  $_POST['context'] are NOT user generated data
+
+		$_POST['actions'] is an array (JSON object) of combined request data that will be sent to
+		afsanalytics.com to retrieve statistical data processed to display various charts in our dashboard
+
+		$_POST['context'] is an array (JSON object) of combined data that will be used to enhance
+		data received from afsanalytics.com
+
+		Both are produced by https://api.afsanalytics.com/assets/js/common/v2/dashboard.js
+
+		None is directly displayed, or saved.
+
+		$_POST['context']['products] is the only data to be used to request data from db.
+		Its content is sanitized in class-afsa-db.php ( get_products_by_ref ).
+
+		*/
+
+		$this->requested_actions = empty( $_POST['actions'] ) ? null : $_POST['actions'];
+		$this->context           = empty( $_POST['context'] ) ? null : $_POST['context'];
 	}
 
 	public function run() {
