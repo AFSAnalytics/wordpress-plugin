@@ -26,10 +26,9 @@ class AFSA_Account_Controller {
 	}
 
 	public function on_action_completed() {
-		$r = &$_REQUEST;
 
-		if ( ! empty( $r['afsa_action'] ) ) {
-			switch ( sanitize_text_field( $r['afsa_action'] ) ) {
+		if ( ! empty( $_REQUEST['afsa_action'] ) ) {
+			switch ( sanitize_text_field( $_REQUEST['afsa_action'] ) ) {
 
 				case 'account_created':
 					$this->on_account_created();
@@ -104,8 +103,7 @@ class AFSA_Account_Controller {
 
 		$this->validate_state();
 
-		$r  = &$_REQUEST;
-		$id = sanitize_text_field( $r['afsa_account_id'] );
+		$id = sanitize_text_field( $_REQUEST['afsa_account_id'] );
 
 		// Saving account infos
 		$account = AFSA_Account_Manager::get()->set_current( $id );
@@ -113,10 +111,10 @@ class AFSA_Account_Controller {
 			return;
 		}
 
-		if ( ! empty( $r['afsa_trial_type'] ) ) {
+		if ( ! empty( $_REQUEST['afsa_trial_type'] ) ) {
 			$account->set_trial(
-				sanitize_text_field( $r['afsa_trial_type'] ),
-				empty( $r['afsa_trial_period'] ) ? null : sanitize_text_field( $r['afsa_trial_period'] )
+				sanitize_text_field( $_REQUEST['afsa_trial_type'] ),
+				empty( $_REQUEST['afsa_trial_period'] ) ? null : sanitize_text_field( $_REQUEST['afsa_trial_period'] )
 			);
 		}
 		$account->save();
@@ -127,7 +125,7 @@ class AFSA_Account_Controller {
 	}
 
 	private function on_account_set( $id ) {
-		// Initiate api login since user is authentified
+		// Initiate api login since user is authenticated
 		if ( $this->api_auto_login ) {
 			$api = new AFSA_Api(
 				array(
