@@ -16,26 +16,27 @@ class AFSA_Api_Request {
 			AFSA_Config::set_demo_mode();
 		}
 
-		/*
-		$_POST['actions'] and  $_POST['context'] are NOT user generated data
+		$this->requested_actions = empty( $_POST['actions'] ) ? null : $this->sanitize_array( $_POST['actions'] );
+		$this->context           = empty( $_POST['context'] ) ? null : $this->sanitize_array( $_POST['context'] );
+	}
 
-		$_POST['actions'] is an array (JSON object) of combined request data that will be sent to
-		afsanalytics.com to retrieve statistical data processed to display various charts in our dashboard
 
-		$_POST['context'] is an array (JSON object) of combined data that will be used to enhance
-		data received from afsanalytics.com
+	private function sanitize_array( $data ) {
 
-		Both are produced by https://api.afsanalytics.com/assets/js/common/v2/dashboard.js
+		$ret = array();
+		foreach ( $data as $key => $value ) {
 
-		None is directly displayed, or saved.
+			if ( is_string( $value ) ) {
+				$ret[ $key ] = sanitize_text_field( $value );
 
-		$_POST['context']['products] is the only data to be used to request data from db.
-		Its content is sanitized in class-afsa-db.php ( get_products_by_ref ).
+			} elseif ( is_array( $value ) ) {
+				$ret[ $key ] = $this->sanitize_array( $value );
 
-		*/
-
-		$this->requested_actions = empty( $_POST['actions'] ) ? null : $_POST['actions'];
-		$this->context           = empty( $_POST['context'] ) ? null : $_POST['context'];
+			} else {
+				$ret[ $key ] = value;
+			}
+		}
+		return $ret;
 	}
 
 	public function run() {
@@ -75,5 +76,4 @@ class AFSA_Api_Request {
 
 		return $result->render();
 	}
-
 }
