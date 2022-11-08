@@ -28,12 +28,10 @@ class AFSA_Api_Request {
 
 			if ( is_string( $value ) ) {
 				$ret[ $key ] = sanitize_text_field( $value );
-
 			} elseif ( is_array( $value ) ) {
 				$ret[ $key ] = $this->sanitize_array( $value );
-
 			} else {
-				$ret[ $key ] = value;
+				$ret[ $key ] = $value;
 			}
 		}
 		return $ret;
