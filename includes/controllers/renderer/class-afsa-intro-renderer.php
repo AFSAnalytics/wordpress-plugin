@@ -21,7 +21,7 @@ class AFSA_Intro_Renderer {
 
 		wp_enqueue_style(
 			'gfonts',
-			'https://fonts.googleapis.com/css?family=Lato:700|Open+sans:500'
+			'https://fonts.googleapis.com/css?family=Lato:700|Open+Sans:500'
 		);
 
 		wp_enqueue_script(

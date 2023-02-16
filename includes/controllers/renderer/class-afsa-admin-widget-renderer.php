@@ -29,7 +29,7 @@ class AFSA_Admin_Widget_Renderer {
 
 			wp_enqueue_style(
 				'gfonts',
-				'https://fonts.googleapis.com/css?family=Lato:700|Open+sans:500'
+				'https://fonts.googleapis.com/css?family=Lato:700|Open+Sans:500'
 			);
 
 			wp_enqueue_script(
@@ -57,6 +57,7 @@ class AFSA_Admin_Widget_Renderer {
 				. AFSA_Account_Form_Renderer::render_account_form( 'widget' )
 				. AFSA_Account_Form_Renderer::render_demo_form()
 				. '</div>';
+
 	}
 
 }

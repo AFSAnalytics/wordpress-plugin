@@ -194,7 +194,7 @@ msgstr ""
 #: includes/controllers/renderer/class-afsa-dashboard-renderer.php:231
 msgid ""
 "This dashboard is displaying in real time the activity of a WordPress "
-"website running a Woocomerce eShop."
+"website running a Woocommerce eShop."
 msgstr ""
 
 #: includes/controllers/renderer/class-afsa-dashboard-renderer.php:233

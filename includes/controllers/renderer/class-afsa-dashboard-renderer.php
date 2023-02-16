@@ -29,7 +29,7 @@ class AFSA_Dashboard_Renderer {
 
 		wp_enqueue_style(
 			'afsa_gfonts',
-			'https://fonts.googleapis.com/css?family=Lato:700|Open+sans:500|Roboto'
+			'https://fonts.googleapis.com/css?family=Lato:700|Open+Sans:500|Roboto'
 		);
 
 		wp_enqueue_style(
@@ -236,7 +236,7 @@ class AFSA_Dashboard_Renderer {
 			. __( 'Live Demo', 'afsanalytics', 'afsanalytics' )
 			. '</div>'
 			. '<div class=afsa_text><div>'
-			. __( 'This dashboard is displaying in real time the activity of a WordPress website running a Woocomerce eShop.', 'afsanalytics' )
+			. __( 'This dashboard is displaying in real time the activity of a WordPress website running a Woocommerce eShop.', 'afsanalytics' )
 			. '</div><div>'
 			. __( 'To monitor your own website, you will have to open your own account.', 'afsanalytics' )
 			. '</div></div>'
