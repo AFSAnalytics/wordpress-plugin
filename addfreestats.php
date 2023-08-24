@@ -4,13 +4,13 @@
   Plugin Name: AFS Analytics
   Plugin URI: https://www.afsanalytics.com/
   Description: Full featured Web Analytics solution. Easy to use, in addition or as an alternative to google analytics.
-  Version: 4.19
+  Version: 4.20
   Author: AFS Analytics
   Author URI: https://www.afsanalytics.com/
   Text Domain: afsanalytics
   Domain Path: /languages
   WC requires at least: 1.4.1
-  WC tested up to: 7.7.0
+  WC tested up to: 8.0.2
  */
 
 
@@ -36,7 +36,7 @@ if ( ! class_exists( 'AFSA_Core_Stats_Plugin' ) ) :
 
 
 	define( 'AFSA_DEBUG_MODE', false );
-	define( 'AFSA_MODULE_VERSION', '4.0.19' );
+	define( 'AFSA_MODULE_VERSION', '4.0.20' );
 
 	class AFSA_Core_Stats_Plugin {
 
