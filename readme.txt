@@ -1,9 +1,9 @@
 ﻿=== AFS Analytics ===
 Contributors: AddFreeStats
 Requires at least: 3.5.0
-Tested up to: 6.3
+Tested up to: 6.6
 Requires PHP: 5.3
-Stable tag: 4.20
+Stable tag: 4.21
 Tags: analytics, afsanalytics, heatmaps, web analytics, website statistics, event tracking, real-time analytics, analytics dashboard, tracking, track visitor, admin tracking, statistics, counter, stats, track page, tracker, geolocation, sale tracking, user tracking, real-time tracking, visitor tracking, track visitors, ip tracking,  online users, pageviews, admin tracking, counter, e-commerce tracking, track keyword, keyword position, woocommerce tracking, predictive analytics, referrer, website analytics
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -164,6 +164,10 @@ Now includes a full featured dashboard right inside your admin dashboard.
 
 == Changelog ==
 
+= 4.21 =
+
+* Wordpress 6.6 support.
+* WooCommerce 9.3 support.
 
 = 4.20 =
 
