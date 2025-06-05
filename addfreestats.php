@@ -4,13 +4,13 @@
   Plugin Name: AFS Analytics
   Plugin URI: https://www.afsanalytics.com/
   Description: Full featured Web Analytics solution. Easy to use, in addition or as an alternative to google analytics.
-  Version: 4.21
+  Version: 4.22
   Author: AFS Analytics
   Author URI: https://www.afsanalytics.com/
   Text Domain: afsanalytics
   Domain Path: /languages
   WC requires at least: 1.4.1
-  WC tested up to: 9.3.3
+  WC tested up to: 9.8.5
  */
 
 
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 
- require_once __DIR__ . '/includes/defines.php';
+require_once __DIR__ . '/includes/defines.php';
 
 require_once __DIR__ . '/includes/class-afsa-tools.php';
 require_once __DIR__ . '/includes/config/class-afsa-config.php';
@@ -36,7 +36,7 @@ if ( ! class_exists( 'AFSA_Core_Stats_Plugin' ) ) :
 
 
 	define( 'AFSA_DEBUG_MODE', false );
-	define( 'AFSA_MODULE_VERSION', '4.0.21' );
+	define( 'AFSA_MODULE_VERSION', '4.0.22' );
 
 	class AFSA_Core_Stats_Plugin {
 

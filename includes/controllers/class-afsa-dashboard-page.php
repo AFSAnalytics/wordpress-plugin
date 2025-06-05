@@ -6,7 +6,7 @@ require_once AFSA_INCLUDES_DIR . '/controllers/renderer/class-afsa-intro-rendere
 class AFSA_Dashboard_Page {
 
 	public static function render() {
-		if ( is_admin() ) {
+		if ( is_admin() ) {	
 			$renderer = new AFSA_Dashboard_Renderer();
 			print $renderer->render_view();
 		}

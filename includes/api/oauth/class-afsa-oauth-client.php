@@ -138,7 +138,7 @@ class AFSA_OAuth_Client {
 		AFSA_Tools::log( __METHOD__, $params );
 
 		AFSA_Tools::redirect( $this->url['authorize'] . '?' . http_build_query( $params ) );
-		exit;
+		exit();
 	}
 
 	public function on_authorization_code_received() {

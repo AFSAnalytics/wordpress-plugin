@@ -93,6 +93,16 @@ class AFSA_Admin {
 				break;
 
 			case AFSA_MENU_PAGE_DASHBOARD_ID:
+
+				if (!empty($_POST['afsa_linked_account_id'])) {
+					if (
+						empty($_POST['_wpnonce']) ||
+						! wp_verify_nonce($_POST['_wpnonce'], 'link_account')
+					) {
+						wp_nonce_ays('login');
+					}
+				}
+
 				if ( AFSA_Config::afsa_enabled() ) {
 					AFSA_Dashboard_Renderer::init_api();
 				}
